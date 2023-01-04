@@ -10,4 +10,6 @@
 
 [커리어리 | 개발자들의 커리어 SNS](https://careerly.co.kr/)
 
-### [📓 스토리보드](https://www.figma.com/file/Zyu99SCQ61orl5V1vRowMo/Storyboard?node-id=0%3A1&t=E85pA4lXTZpigmrB-0)
+### 📓 스토리보드
+
+[Figma | Storyboard](https://www.figma.com/file/Zyu99SCQ61orl5V1vRowMo/Storyboard?node-id=0%3A1&t=E85pA4lXTZpigmrB-0)

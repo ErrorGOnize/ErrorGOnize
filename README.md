@@ -1,6 +1,6 @@
 # ErrorGOnize
 
-## [Notion](https://songdabin.notion.site/ErrorGOnize-Team-3-c381ae158a504ae697bb0f33326a1ab9)
+### [Notion Link](https://songdabin.notion.site/ErrorGOnize-Team-3-c381ae158a504ae697bb0f33326a1ab9)
 
 ### ❗️ 주제
 
@@ -10,6 +10,4 @@
 
 [커리어리 | 개발자들의 커리어 SNS](https://careerly.co.kr/)
 
-### 📓 스토리보드
-
-https://www.figma.com/file/Zyu99SCQ61orl5V1vRowMo/Storyboard?node-id=0%3A1&t=E85pA4lXTZpigmrB-0
+### [📓 스토리보드](https://www.figma.com/file/Zyu99SCQ61orl5V1vRowMo/Storyboard?node-id=0%3A1&t=E85pA4lXTZpigmrB-0)

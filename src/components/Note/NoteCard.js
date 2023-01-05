@@ -12,19 +12,32 @@ export default function NoteCard() {
       sx={{ borderRadius: 5, width: "calc(40vw)" }}
       border={"5px solid #f3f3f3"}
     >
-      <Typography
-        fontFamily={"Prosto One"}
-        fontWeight={900}
-        fontSize="1.2rem"
-        color="#FF6A00"
-      >
-        React - Typescript 정리
-      </Typography>
+      <Box display="flex" justifyContent="space-between" alignItems="baseline">
+        <Typography
+          fontFamily={"Prosto One"}
+          fontWeight={900}
+          fontSize="1.2rem"
+          color="#FF6A00"
+        >
+          React - Typescript 정리
+        </Typography>
+        <Typography
+          fontFamily={"Prosto One"}
+          fontSize="0.8rem"
+          fontWeight={400}
+        >
+          2023-01-05
+        </Typography>
+      </Box>
+
       <Typography fontFamily={"Prosto One"} fontWeight={500}>
-        백업파일 실행 중 이런 에러가 뜨는데 어떻게 해결할 수 있을까요?
+        MUI offers a comprehensive suite of UI tools to help you ship new
+        features faster. Start with Material UI, our fully-loaded component
+        library, or bring your own design system to our production-ready
+        components.
       </Typography>
       <Typography fontFamily={"Prosto One"} fontWeight={300}>
-        조회수 59 답변 8
+        조회수 59
       </Typography>
     </Box>
   );

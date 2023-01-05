@@ -1,21 +1,22 @@
 import * as React from "react";
-import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 
 export default function Category() {
   return (
-    <Paper
+    <Box
+      border={"5px solid #f3f3f3"}
       sx={{
-        width: "calc(25vw)",
+        width: "calc(15vw)",
         maxWidth: "100%",
         borderRadius: 8,
-        backgroundColor: "#f3f3f3",
+        // backgroundColor: "#f3f3f3",
       }}
     >
       <MenuList>
-        <MenuItem sx={{ m: 1 }}>
+        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
           <Typography sx={{ fontWeight: 800 }}># ALL</Typography>
         </MenuItem>
         <MenuItem sx={{ m: 1 }}>
@@ -37,6 +38,6 @@ export default function Category() {
           <Typography sx={{ fontWeight: 800 }}># Java</Typography>
         </MenuItem>
       </MenuList>
-    </Paper>
+    </Box>
   );
 }

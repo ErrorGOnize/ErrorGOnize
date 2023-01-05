@@ -1,6 +1,6 @@
 # ErrorGOnize
 
-### [Notion Link](https://songdabin.notion.site/ErrorGOnize-Team-3-c381ae158a504ae697bb0f33326a1ab9)
+## [Notion Link](https://songdabin.notion.site/ErrorGOnize-Team-3-c381ae158a504ae697bb0f33326a1ab9)
 
 ### ❗️ 주제
 

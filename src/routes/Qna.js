@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 export default function Qna() {
   return (
     <Container>
-      <h1>QNA</h1>
+      <h3>QNA</h3>
     </Container>
   );
 }

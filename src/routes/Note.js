@@ -5,10 +5,11 @@ import Popularqna from "../components/Common/Popularqna";
 import AddNoteBtn from "../components/Common/AddNoteBtn";
 import NoteCard from "../components/Note/NoteCard";
 import Sort from "../components/Common/Sort";
+import NoteWrite from "../components/Note/NoteWrite";
 
 export default function Note() {
   return (
-    <Container maxWidth="lg" sx={{ pt: 3, mb: 3 }}>
+    <Container sx={{ pt: 3, mb: 3 }}>
       <Box display="flex" gap={6} alignItems="flex-start">
         <Box display="flex" flexDirection="column" gap={3}>
           <Search />
@@ -25,6 +26,7 @@ export default function Note() {
         <Box display="flex" flexDirection="column" gap={3}>
           <AddNoteBtn />
           <Popularqna />
+          <NoteWrite />
         </Box>
       </Box>
     </Container>

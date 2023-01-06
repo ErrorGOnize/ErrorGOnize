@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
-export default function Popularqna() {
+export default function NoteWrite() {
   return (
     <Box
       display={"flex"}
@@ -15,22 +15,27 @@ export default function Popularqna() {
       <Box display="flex" justifyContent="space-between">
         <Typography
           fontFamily={"Prosto One"}
-          fontWeight={900}
+          fontWeight={800}
           fontSize="1.2rem"
           color="#FF6A00"
         >
-          인기 Q&A
+          노트는 어떻게?
         </Typography>
-        <Box>
-          <NavigateBeforeIcon sx={{ color: "#888" }} />
-          <NavigateNextIcon sx={{ color: "#888" }} />
-        </Box>
       </Box>
-      <Typography fontFamily={"Prosto One"} fontWeight={500}>
-        백업파일 실행 중 이런 에러가 뜨는데 어떻게 해결할 수 있을까요?
-      </Typography>
-      <Typography fontFamily={"Prosto One"} fontWeight={300}>
-        조회수 59 답변 8
+      <Typography fontFamily={"Prosto One"} fontWeight={400}>
+        개발하다가 발생한 에러를
+        <br />
+        정리한 노트를 올리시거나,
+        <br />
+        <br />
+        개발에 관련된 Tip을
+        <br />
+        공유해주시면 됩니다.
+        <br />
+        <br />
+        아래의 예시를 참고해서
+        <br />
+        노트를 작성해보세요!
       </Typography>
     </Box>
   );

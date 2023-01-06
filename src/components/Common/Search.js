@@ -1,27 +1,25 @@
-import { Box, Paper, Typography } from "@mui/material";
+import InputBase from "@mui/material/InputBase";
+import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+import { Box } from "@mui/material";
 
 export default function Search() {
   return (
     <Box
-      display="flex"
-      gap={1}
+      component="form"
       sx={{
-        padding: 1,
-        borderRadius: 5,
-        backgroundColor: "#f3f3f3",
+        p: "0px 4px",
+        display: "flex",
+        alignItems: "center",
         width: "calc(15vw)",
+        border: "1px solid lightgray",
+        borderRadius: 6,
       }}
-      // sx={{ border: "1px solid #A6A0B5", borderRadius: 5, padding: 1 }}
     >
-      <SearchIcon sx={{ color: "rgba(0, 0, 0, 0.54)", mr: 1 }} />
-      <Typography
-        fontFamily={"Prosto One"}
-        fontWeight={800}
-        sx={{ color: "#222" }}
-      >
-        Search
-      </Typography>
+      <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search" />
+      <IconButton type="button" aria-label="search">
+        <SearchIcon />
+      </IconButton>
     </Box>
   );
 }

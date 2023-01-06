@@ -7,6 +7,7 @@ export default function AddNoteBtn() {
         backgroundColor: "#0B0988",
         fontWeight: 900,
         fontSize: "1rem",
+        width: "calc(18vw)",
       }}
       variant="contained"
       sx={{ borderRadius: 5, fontFamily: "Prosto One", letterSpacing: 5 }}

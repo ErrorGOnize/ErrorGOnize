@@ -6,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Container } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const pages = ["Q & A", "Note", "My Page"];
+const pages = [
+  ["Q & A", "qna"],
+  ["Note", "note"],
+  ["My Page", "mypage"],
+];
 
 function Header() {
   return (
@@ -17,27 +22,33 @@ function Header() {
           <Typography
             variant="h5"
             component="div"
-            fontStyle={{ color: "#2E3B55" }}
             sx={{
               flexGrow: 1,
               fontWeight: 900,
               fontFamily: "Prosto One",
             }}
           >
-            ErrorGOnize
+            <Link
+              to="dashboard"
+              style={{ textDecoration: "none", color: "#2E3B55" }}
+            >
+              ErrorGOnize
+            </Link>
           </Typography>
           <Box display="flex" alignItems="center" sx={{ mr: 1 }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{
-                  color: "#A6A0B5",
-                  fontFamily: "Prosto One",
-                  fontWeight: 600,
-                }}
-              >
-                {page}
-              </Button>
+              <Link to={page[1]} style={{ textDecoration: "none" }}>
+                <Button
+                  key={page[0]}
+                  sx={{
+                    color: "#A6A0B5",
+                    fontFamily: "Prosto One",
+                    fontWeight: 600,
+                  }}
+                >
+                  {page[0]}
+                </Button>
+              </Link>
             ))}
             <NotificationsIcon sx={{ color: "#A6A0B5", ml: 1, mr: 1 }} />
           </Box>

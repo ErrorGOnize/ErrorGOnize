@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
+import GoogleButton from "./components/Login/GoogleButton";
 import Dashboard from "./routes/Dashboard";
 import Mypage from "./routes/Mypage";
 import Note from "./routes/Note";
@@ -19,8 +20,11 @@ export default function Router() {
         <Route path="/mypage">
           <Mypage />
         </Route>
-        <Route path="/">
+        <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/">
+          <GoogleButton />
         </Route>
       </Switch>
     </BrowserRouter>

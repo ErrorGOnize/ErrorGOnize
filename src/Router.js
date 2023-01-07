@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
-import GoogleButton from "./components/Login/GoogleButton";
+import EgoLogin from "./components/Login/EgoLogin";
 import Dashboard from "./routes/Dashboard";
 import Mypage from "./routes/Mypage";
 import Note from "./routes/Note";
@@ -28,7 +28,7 @@ export default function Router() {
           <Dashboard />
         </Route>
         <Route path="/">
-          <GoogleButton />
+          <EgoLogin />
         </Route>
       </Switch>
     </BrowserRouter>

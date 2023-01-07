@@ -5,12 +5,16 @@ import Dashboard from "./routes/Dashboard";
 import Mypage from "./routes/Mypage";
 import Note from "./routes/Note";
 import Qna from "./routes/Qna";
+import NewQna from "./routes/NewQna";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Header />
       <Switch>
+        <Route path="/qna/newqna">
+          <NewQna />
+        </Route>
         <Route path="/qna">
           <Qna />
         </Route>

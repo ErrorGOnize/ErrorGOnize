@@ -6,6 +6,7 @@ import AddNoteBtn from "../components/Common/AddNoteBtn";
 import NoteCard from "../components/Note/NoteCard";
 import Sort from "../components/Common/Sort";
 import NoteWrite from "../components/Note/NoteWrite";
+import { Link } from "react-router-dom";
 
 export default function Note() {
   return (
@@ -24,7 +25,9 @@ export default function Note() {
           <NoteCard />
         </Box>
         <Box display="flex" flexDirection="column" gap={3}>
-          <AddNoteBtn />
+          <Link to="/note/newnote" style={{ textDecoration: "none" }}>
+            <AddNoteBtn />
+          </Link>
           <Popularqna />
           <NoteWrite />
         </Box>

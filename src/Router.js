@@ -7,6 +7,7 @@ import Note from "./routes/Note";
 import Qna from "./routes/Qna";
 import NewQna from "./routes/NewQna";
 import Before from "./routes/Before";
+import NewNote from "./routes/NewNote";
 
 export default function Router() {
   return (
@@ -18,6 +19,9 @@ export default function Router() {
         </Route>
         <Route path="/qna">
           <Qna />
+        </Route>
+        <Route path="/note/newnote">
+          <NewNote />
         </Route>
         <Route path="/note">
           <Note />

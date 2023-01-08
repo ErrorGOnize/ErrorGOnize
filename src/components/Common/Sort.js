@@ -12,7 +12,7 @@ export default function Sort() {
   };
 
   return (
-    <FormControl sx={{ minWidth: 120 }} size="small">
+    <FormControl sx={{ minWidth: 100 }} size="small">
       <InputLabel sx={{ fontFamily: "Prosto One" }}>Sort by</InputLabel>
       <Select
         value={sort}
@@ -20,7 +20,7 @@ export default function Sort() {
         onChange={handleChange}
         sx={{
           borderRadius: 5,
-          width: "calc(15vw)",
+          // width: "calc(15vw)",
           fontFamily: "Prosto One",
         }}
       >

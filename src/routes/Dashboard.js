@@ -1,8 +1,8 @@
 import { Box, Container } from "@mui/material";
 import Popularqna from "../components/Common/Popularqna";
-import QuestionBar from "../components/DashBoard/QuestionBar";
-import RecentQtn from "../components/DashBoard/RecentQtn";
-import QrCode from "../components/DashBoard/QrCode";
+import RecentQtn from "../components/Dashboard/RecentQtn";
+import QrCode from "../components/Dashboard/QrCode";
+import QuestionBar from "../components/Dashboard/QuestionBar";
 
 export default function Dashboard() {
   return (
@@ -22,4 +22,3 @@ export default function Dashboard() {
     </Container>
   );
 }
-

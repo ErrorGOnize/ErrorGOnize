@@ -16,7 +16,10 @@ export default function Search() {
         borderRadius: 6,
       }}
     >
-      <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search" />
+      <InputBase
+        sx={{ ml: 1, flex: 1, fontFamily: "Prosto One" }}
+        placeholder="Search"
+      />
       <IconButton type="button" aria-label="search">
         <SearchIcon />
       </IconButton>

@@ -1,6 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 export default function NoteWrite() {
   return (
@@ -19,7 +17,7 @@ export default function NoteWrite() {
           fontSize="1.2rem"
           color="#FF6A00"
         >
-          노트는 어떻게?
+          🧐 노트는 어떻게? 🧐
         </Typography>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={400}>

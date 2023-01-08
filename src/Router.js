@@ -6,6 +6,7 @@ import Mypage from "./routes/Mypage";
 import Note from "./routes/Note";
 import Qna from "./routes/Qna";
 import NewQna from "./routes/NewQna";
+import Before from "./routes/Before";
 
 export default function Router() {
   return (
@@ -26,6 +27,9 @@ export default function Router() {
         </Route>
         <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/before">
+          <Before />
         </Route>
         <Route path="/">
           <EgoLogin />

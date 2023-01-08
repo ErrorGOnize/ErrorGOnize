@@ -5,7 +5,7 @@ import {Box, Button, Container} from '@mui/material';
 import Tag from "../components/Common/Tag";
 import Paper from '@mui/material/Paper';
 
-export default function AddressForm() {
+export default function NewQna() {
   return (
     <Container>
       <Paper elevation={0} sx={{ my: { xs: 3}}}>

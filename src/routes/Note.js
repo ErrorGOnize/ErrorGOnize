@@ -18,11 +18,24 @@ export default function Note() {
         </Box>
         <Box display="flex" flexDirection="column" gap={3}>
           <Sort />
-          <NoteCard />
-          <NoteCard />
-          <NoteCard />
-          <NoteCard />
-          <NoteCard />
+          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
+            <NoteCard />
+          </Link>
+          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
+            <NoteCard />
+          </Link>
+          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
+            <NoteCard />
+          </Link>
+          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
+            <NoteCard />
+          </Link>
+          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
+            <NoteCard />
+          </Link>
+          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
+            <NoteCard />
+          </Link>
         </Box>
         <Box display="flex" flexDirection="column" gap={3}>
           <Link to="/note/newnote" style={{ textDecoration: "none" }}>

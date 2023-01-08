@@ -6,7 +6,7 @@ import {
   TextField,
   Link,
 } from "@mui/material";
-import Sort from "../components/Common/Sort";
+import CateDropdown from "../components/Common/CateDropdown";
 import Toggle from "../components/NewNote/Toggle";
 
 export default function NewNote() {
@@ -17,7 +17,7 @@ export default function NewNote() {
     >
       <Box display="flex" justifyContent="space-between" sx={{ p: 3 }}>
         <Box display="flex" alignItems="center" gap={3}>
-          <Sort />
+          <CateDropdown />
           <Toggle />
         </Box>
         <Box display="flex" gap={2}>

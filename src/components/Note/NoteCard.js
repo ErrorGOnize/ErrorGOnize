@@ -25,18 +25,19 @@ export default function NoteCard() {
           fontFamily={"Prosto One"}
           fontSize="0.8rem"
           fontWeight={400}
+          color="#222"
         >
           2023-01-05
         </Typography>
       </Box>
 
-      <Typography fontFamily={"Prosto One"} fontWeight={500}>
+      <Typography fontFamily={"Prosto One"} fontWeight={500} color="#222">
         MUI offers a comprehensive suite of UI tools to help you ship new
         features faster. Start with Material UI, our fully-loaded component
         library, or bring your own design system to our production-ready
         components.
       </Typography>
-      <Typography fontFamily={"Prosto One"} fontWeight={300}>
+      <Typography fontFamily={"Prosto One"} fontWeight={300} color="#222">
         조회수 59
       </Typography>
     </Box>

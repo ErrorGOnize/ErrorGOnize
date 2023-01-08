@@ -5,10 +5,8 @@ import Divider from "@mui/material/Divider";
 
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import TabPanel from "../components/Mypage/TabPanel";
-
 import Avatar from "@mui/material/Avatar";
-import Chips from "../components/Mypage/Chips";
+import Chips from "../components/MyPage/Chips";
 import NoteCard from "../components/Note/NoteCard";
 import QuestionBar from "../components/Dashboard/QuestionBar";
 

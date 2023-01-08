@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function AddNoteBtn() {
   return (
-    <Link to="/qna/newqna">
+    <Link to="/qna/newqna" style={{ textDecoration: 'none' }}>
       <Button
       style={{
         backgroundColor: "#0B0988",

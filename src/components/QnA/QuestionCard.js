@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 export default function QuestionCard({question, date, content, numOfAnswer, tag}) {
   return (
@@ -14,14 +15,16 @@ export default function QuestionCard({question, date, content, numOfAnswer, tag}
       border={"5px solid #f3f3f3"}
     >
       <Box display="flex" justifyContent="space-between" alignItems="baseline">
-        <Typography
-          fontFamily={"Prosto One"}
-          fontWeight={900}
-          fontSize="1.2rem"
-          color="#FF6A00"
-        >
-          {question}
-        </Typography>
+        <Link to="/qna/detailqna" style={{ textDecoration: 'none' }}>
+          <Typography
+            fontFamily={"Prosto One"}
+            fontWeight={900}
+            fontSize="1.2rem"
+            color="#FF6A00"
+          >
+            {question}
+          </Typography>
+        </Link>
         <Typography
           fontFamily={"Prosto One"}
           fontSize="0.8rem"
@@ -33,10 +36,17 @@ export default function QuestionCard({question, date, content, numOfAnswer, tag}
       <Typography fontFamily={"Prosto One"} fontWeight={500}>
         {content}
       </Typography>
-      <Button 
-        style={{ color: "#424242" ,backgroundColor: "#f5f5f5"}}>
+      <Box
+            display="flex"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+      >
+        <Button 
+          style={{ color: "#424242" ,backgroundColor: "#f5f5f5"}}
+        >
         {tag}
-      </Button>
+        </Button>
+      </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={300}>
         답변
         {numOfAnswer}

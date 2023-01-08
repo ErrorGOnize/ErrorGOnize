@@ -9,12 +9,16 @@ import NewQna from "./routes/NewQna";
 import Before from "./routes/Before";
 import NewNote from "./routes/NewNote";
 import DetailNote from "./routes/DetailNote";
+import DetailQna from "./routes/DetailQna";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Header />
       <Switch>
+        <Route path="/qna/detailqna">
+          <DetailQna />
+        </Route>
         <Route path="/qna/newqna">
           <NewQna />
         </Route>

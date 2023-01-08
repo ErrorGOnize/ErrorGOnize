@@ -9,9 +9,9 @@ import { Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const pages = [
-  ["Q & A", "qna"],
-  ["Note", "note"],
-  ["My Page", "mypage"],
+  ["Q & A", `/qna`],
+  ["Note", `/note`],
+  ["My Page", `/mypage`],
 ];
 
 function Header() {
@@ -29,7 +29,7 @@ function Header() {
             }}
           >
             <Link
-              to="dashboard"
+              to={`/dashboard`}
               style={{ textDecoration: "none", color: "#2E3B55" }}
             >
               ErrorGOnize
@@ -37,18 +37,20 @@ function Header() {
           </Typography>
           <Box display="flex" alignItems="center" sx={{ mr: 1 }}>
             {pages.map((page) => (
-              <Link to={page[1]} style={{ textDecoration: "none" }}>
-                <Button
-                  key={page[0]}
-                  sx={{
-                    color: "#A6A0B5",
-                    fontFamily: "Prosto One",
-                    fontWeight: 600,
-                  }}
-                >
-                  {page[0]}
-                </Button>
-              </Link>
+              // <Link to={page[1]} style={{ textDecoration: "none" }}>
+              <Button
+                component={Link}
+                to={page[1]}
+                key={page[0]}
+                sx={{
+                  color: "#A6A0B5",
+                  fontFamily: "Prosto One",
+                  fontWeight: 600,
+                }}
+              >
+                {page[0]}
+              </Button>
+              // </Link>
             ))}
             <NotificationsIcon sx={{ color: "#A6A0B5", ml: 1, mr: 1 }} />
           </Box>

@@ -1,7 +1,7 @@
 import { Box, Container } from "@mui/material";
 import Popularqna from "../components/Common/Popularqna";
 import RecentQtn from "../components/Dashboard/RecentQtn";
-import QrCode from "../components/Dashboard/QrCode";
+import DashboardWrite from "../components/Dashboard/DashboardWrite";
 import QuestionBar from "../components/Dashboard/QuestionBar";
 
 export default function Dashboard() {
@@ -16,7 +16,7 @@ export default function Dashboard() {
         </Box>
         <Box display="flex" flexDirection="column" gap={3}>
           <Popularqna />
-          <QrCode />
+          <DashboardWrite />
         </Box>
       </Box>
     </Container>

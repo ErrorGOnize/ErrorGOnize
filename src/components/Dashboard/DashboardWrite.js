@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
+import QuizIcon from '@mui/icons-material/Quiz';
+
 
 export default function DashboardWrite() {
     return (
@@ -18,23 +20,23 @@ export default function DashboardWrite() {
           fontSize="1.2rem"
           color="#FF6A00"
         >
-          🧐 노트는 어떻게? 🧐
+          🧐 대시보드는 어떻게? 🧐
         </Typography>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={400}>
-        개발하다가 발생한 에러를
+        <AutorenewIcon/> 대시보드에서는 가장 최근에 
         <br />
-        정리한 노트를 올리시거나,
-        <br />
-        <br />
-        개발에 관련된 Tip을
-        <br />
-        공유해주시면 됩니다.
+        게시된 에러들을 볼 수 있고,
         <br />
         <br />
-        아래의 예시를 참고해서
+        <QuizIcon/> 상단의 질문 창을 통해
         <br />
-        노트를 작성해보세요!
+        질문을 게시할 수 있습니다.
+        <br />
+        <br />
+        <Typography fontWeight={900}>
+          새로운 질문과 답변을 작성해보세요!
+        </Typography>
       </Typography>
     </Box>
     );

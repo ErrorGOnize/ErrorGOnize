@@ -17,7 +17,7 @@ export default function RecentQtnContent() {
         <Typography fontFamily={"Prosto One"} fontWeight={400}>
             Question Content<br/>
             ......................................................................................
-            ..........................................................................더보기
+            ..........................................................................
         </Typography>
         <Typography fontFamily={"Prosto One"} fontWeight={300} fontSize={13}>
             조회수 101&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;답변 12

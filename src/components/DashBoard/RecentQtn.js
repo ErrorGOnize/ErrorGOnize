@@ -2,6 +2,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import OthersPfBtn from "./OthersPfBtn";
 import RecentQtnContent from "./RecentQtnContent";
+import { Link } from "react-router-dom";
+import { color } from "@mui/system";
 
 export default function RecentQtn() {
   return (
@@ -16,7 +18,9 @@ export default function RecentQtn() {
     >
       <OthersPfBtn/>
       <Box p={2}>
+      <Link to={"/qna/detailqna"} style={{ textDecoration: "none" }}>
         <RecentQtnContent/>
+      </Link>
       </Box>
       
     </Box>

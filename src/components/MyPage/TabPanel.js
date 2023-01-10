@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import { Grid, Button } from '@mui/material';
 import PfBtn from '../Dashboard/PfBtn';
 import Cards from "./Cards";
+import { Link } from "react-router-dom";
 
 const QuestionBar = (mode) => {
   console.log(mode.value);
@@ -20,19 +21,19 @@ const QuestionBar = (mode) => {
       <Button
         variant="contained"
         sx={{
-            margin: 0.8,
-            ml: 4,  
-            backgroundColor: "#f3f3f3",
-            fontWeight: 900,
-            fontSize: "1rem",
-            width: "calc(50vw)",
-            height: "calc(4vw)",
-            borderRadius: 4, 
-            fontFamily: "Prosto One", 
-            letterSpacing: 2,
-            color: "#d3d3d3",
-            justifyContent: "left" 
-    }}
+          margin: 0.8,
+          ml: 4,  
+          backgroundColor: "#f3f3f3",
+          fontWeight: 900,
+          fontSize: "1rem",
+          width: "calc(50vw)",
+          height: "calc(4vw)",
+          borderRadius: 4, 
+          fontFamily: "Prosto One", 
+          letterSpacing: 2,
+          color: "#d3d3d3",
+          justifyContent: "left" 
+        }}
     >
       나누고 싶은 { mode.value=='NOTE' ?  '생각이 있으신가요?' : '질문이 있으신가요?'}
     </Button>
@@ -40,11 +41,13 @@ const QuestionBar = (mode) => {
   );
 }
 
-export default function TabPanel({ mode }) {  
+export default function TabPanel({ mode, toLink }) {  
     return (
       <div>
         <Box >
-          <QuestionBar value={mode}/>
+          <Link to={ toLink }  style={{ textDecoration: "none" }}>
+            <QuestionBar value={mode}/>
+          </Link>
           <Grid container spacing={10}> 
             <Grid item xs={6} alignItems="center">
               <Cards mode={mode}></Cards>

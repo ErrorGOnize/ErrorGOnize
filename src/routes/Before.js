@@ -7,6 +7,7 @@ import dash1 from "../images/dash1.png";
 import note1 from "../images/note1.png";
 import qna from "../images/qna.png";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { shadows } from "@mui/system";
 
 export default function Before() {
   return (
@@ -137,7 +138,8 @@ export default function Before() {
             style={{
               width: 250,
               height: 210,
-              borderRadius: 30
+              borderRadius: 30,
+              boxShadow: "10px 5px 5px gray"
             }}
           />
         </Box>
@@ -195,7 +197,8 @@ export default function Before() {
             style={{
               width: 250,
               height: 210,
-              borderRadius: 30
+              borderRadius: 30,
+              boxShadow: "10px 5px 5px gray"
             }}
           />
         </Box>
@@ -254,7 +257,8 @@ export default function Before() {
             style={{
               width: 300,
               height: 170,
-              borderRadius: 20
+              borderRadius: 20,
+              boxShadow: "10px 5px 5px gray"
             }}
           />
         </Box>

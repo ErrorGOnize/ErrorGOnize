@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "../components/MyPage/TabPanel";
-
 import Profile from "../components/MyPage/Profile";
 
 export default function Mypage() {

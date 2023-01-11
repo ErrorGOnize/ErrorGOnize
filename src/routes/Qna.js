@@ -6,12 +6,19 @@ import AddQnaBtn from "../components/Qna/AddQnaBtn";
 import QuestionCard from "../components/Qna/QuestionCard";
 import Filter from "../components/Qna/Filter";
 import Sort from "../components/Common/Sort";
+import QnaWrite from "../components/Qna/QnaWrite";
 
 export default function Qna() {
   return (
-    <Container maxWidth="lg" sx={{ pt: 3, mb: 3 }}>
+    <Container sx={{ pt: 3, mb: 3 }}>
       <Box display="flex" gap={6} alignItems="flex-start">
-        <Box display="flex" flexDirection="column" gap={3}>
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          gap={3}
+          width="calc(15vw)"
+          minWidth="calc(15vw)"
+        >
           <Search />
           <Category />
         </Box>
@@ -38,9 +45,16 @@ export default function Qna() {
             numOfAnswer="2"
           />
         </Box>
-        <Box display="flex" flexDirection="column" gap={3}>
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          gap={3}
+          width="calc(18vw)"
+          minWidth="calc(18vw)"
+        >
           <AddQnaBtn />
           <Popularqna />
+          <QnaWrite />
         </Box>
       </Box>
     </Container>

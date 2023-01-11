@@ -3,10 +3,16 @@ import Category from "../components/Note/Category";
 import AnswerBox from "../components/Qna/AnswerBox";
 import Answer from "../components/Qna/Answer";
 import QuestionDetail from "../components/Qna/QuestionDetail";
+import Popularqna from "../components/Common/Popularqna";
+import QnaWrite from "../components/Qna/QnaWrite";
 
 export default function Qna() {
   return (
-    <Container maxWidth="lg" sx={{ pt: 3, mb: 3 }}>
+    <Container
+      sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}
+      display="flex"
+      flexDirection="column"
+    >
       <Box display="flex" gap={6} alignItems="flex-start">
         <Box display="flex" flexDirection="column" gap={3}>
           <Category />
@@ -33,6 +39,16 @@ export default function Qna() {
             rec = "4"
             />
         </Box>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap={3}
+        minWidth="calc(18vw)"
+        width="calc(40vw)"
+      >
+        <Popularqna />
+        <QnaWrite />
       </Box>
     </Container>
   );

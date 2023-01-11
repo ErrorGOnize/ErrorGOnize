@@ -22,7 +22,17 @@ export default function Category() {
         </MenuItem>
         <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
           <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
-            # JavaScript
+            # Java
+          </Typography>
+        </MenuItem>
+        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
+          <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
+            # Spring
+          </Typography>
+        </MenuItem>
+        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
+          <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
+            # Flutter
           </Typography>
         </MenuItem>
         <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
@@ -32,22 +42,32 @@ export default function Category() {
         </MenuItem>
         <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
           <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
+            # JavaScript
+          </Typography>
+        </MenuItem>
+        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
+          <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
+            # Android
+          </Typography>
+        </MenuItem>
+        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
+          <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
+            # IOS
+          </Typography>
+        </MenuItem>
+        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
+          <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
             # C / C++
           </Typography>
         </MenuItem>
         <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
           <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
-            # Java
+            # Linux
           </Typography>
         </MenuItem>
         <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
           <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
-            # React
-          </Typography>
-        </MenuItem>
-        <MenuItem sx={{ m: 1 }} fontFamily={"Prosto One"}>
-          <Typography sx={{ fontWeight: 800, fontFamily: "Prosto One" }}>
-            # Flutter
+            # IntelliJ
           </Typography>
         </MenuItem>
       </MenuList>

@@ -8,13 +8,18 @@ import { color } from "@mui/system";
 export default function RecentQtn() {
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="baseline"
-      p={1}
-      gap={1}
-      sx={{ borderRadius: 5, width: "calc(60vw)" }}
-      border={"5px solid #f3f3f3"}
+      
+      sx={{
+        display: "flex", 
+        borderRadius: 5,
+      flexDirection: "column",
+      alignItems: "baseline",
+      p: 1,
+      gap: 1,
+      border: "5px solid #f3f3f3"
+       }}
+      
+     
     >
       <OthersPfBtn/>
       <Box p={2}>

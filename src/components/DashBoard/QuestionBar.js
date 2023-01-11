@@ -1,37 +1,42 @@
 import PfBtn from "./PfBtn";
 import { Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function QuestionBar() {
   return (
     <Box
       sx={{
+        display: "flex",
         p: "10px 10px",
         display: "flex",
-        width: "calc(60vw)",
+        alignItems: "center",
         border: "5px solid #f3f3f3",
-        borderRadius: 4,
+        borderRadius: 5
       }}
     >
-      <PfBtn/>
-      <Button
-        variant="contained"
-        sx={{
+      <PfBtn />
+      <Link to={"/qna/newqna"} style={{ textDecoration: "none" }}>
+        <Button
+          variant="outlined"
+          sx={{
             margin: 0.8,
-            ml: 4,  
+            ml: 4,
+            width: "calc(46.5vw)",
+            height: "calc(4vw)",
+            minHeight: "calc(4vw)",
             backgroundColor: "#f3f3f3",
             fontWeight: 900,
             fontSize: "1rem",
-            width: "calc(50vw)",
-            height: "calc(4vw)",
-            borderRadius: 4, 
-            fontFamily: "Prosto One", 
+            borderRadius: 4,
+            fontFamily: "Prosto One",
             letterSpacing: 2,
             color: "#d3d3d3",
-            justifyContent: "left" 
-    }}
-    >
-      나누고 싶은 질문이 있으신가요?
-    </Button>
+            justifyContent: "left"
+          }}
+        >
+          나누고 싶은 질문이 있으신가요?
+        </Button>
+      </Link>
     </Box>
   );
 }

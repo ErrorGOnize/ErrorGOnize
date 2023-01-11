@@ -9,7 +9,6 @@ export default function Category() {
     <Box
       border={"5px solid #f3f3f3"}
       sx={{
-        width: "calc(15vw)",
         maxWidth: "100%",
         borderRadius: 8,
         // backgroundColor: "#f3f3f3",

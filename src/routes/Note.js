@@ -12,7 +12,13 @@ export default function Note() {
   return (
     <Container sx={{ pt: 3, mb: 3 }}>
       <Box display="flex" gap={6} alignItems="flex-start">
-        <Box display="flex" flexDirection="column" gap={3}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap={3}
+          width="calc(15vw)"
+          minWidth="calc(15vw)"
+        >
           <Search />
           <Category />
         </Box>
@@ -37,7 +43,13 @@ export default function Note() {
             <NoteCard />
           </Link>
         </Box>
-        <Box display="flex" flexDirection="column" gap={3}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap={3}
+          width="calc(18vw)"
+          minWidth="calc(18vw)"
+        >
           <Link to="/note/newnote" style={{ textDecoration: "none" }}>
             <AddNoteBtn />
           </Link>

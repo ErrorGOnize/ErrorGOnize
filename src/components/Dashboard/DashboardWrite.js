@@ -10,7 +10,7 @@ export default function DashboardWrite() {
       flexDirection="column"
       p={3}
       gap={3}
-      sx={{ borderRadius: 5, width: "calc(18vw)" }}
+      sx={{ borderRadius: 5, width: "calc(18vw)"}}
       border={"5px solid #f3f3f3"}
     >
       <Box display="flex" justifyContent="space-between">

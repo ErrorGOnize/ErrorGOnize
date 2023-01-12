@@ -8,12 +8,14 @@ import Avatar from "@mui/material/Avatar";
 export default function QuestionCard({date, name, content, rec}) {
   return (
     <Box
-      display={"flex"}
-      flexDirection="column"
-      p={3}
-      gap={3}
-      sx={{ borderRadius: 5, width: "calc(40vw)" }}
-      border={"5px solid #f3f3f3"}
+        display={"flex"}
+        flexDirection="column"
+        p={3}
+        gap={3}
+        sx={{
+        borderRadius: 5,
+        }}
+        border={"5px solid #f3f3f3"}
     >
         <Box
             display="flex"

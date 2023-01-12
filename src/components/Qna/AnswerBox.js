@@ -9,7 +9,9 @@ export default function AnswerBox() {
       flexDirection="column"
       p={3}
       gap={3}
-      sx={{ borderRadius: 5, width: "calc(40vw)" }}
+      sx={{
+        borderRadius: 5,
+      }}
       border={"5px solid #f3f3f3"}
     >
       <Typography
@@ -41,7 +43,6 @@ export default function AnswerBox() {
             등록
             </Button> 
         </Box>
-
     </Box>
   );
 }

@@ -31,7 +31,6 @@ export default function DetailNote() {
           display={"flex"}
           flexDirection="column"
           p={3}
-          gap={3}
           sx={{
             borderRadius: 5,
             // width: "calc(38vw)"
@@ -61,17 +60,47 @@ export default function DetailNote() {
                 React - Typescript 정리
               </Typography>
             </Box>
+            <Box display="flex" gap={1}>
+              <Typography
+                fontFamily={"Prosto One"}
+                fontSize="0.8rem"
+                fontWeight={400}
+                color="#222"
+              >
+                김한동
+              </Typography>
+              <Typography
+                fontFamily={"Prosto One"}
+                fontSize="0.8rem"
+                fontWeight={400}
+                color="#222"
+              >
+                2023-01-05
+              </Typography>
+            </Box>
+          </Box>
+          <Box display="flex" gap={1} justifyContent="flex-end" mt={1}>
             <Typography
               fontFamily={"Prosto One"}
-              fontSize="0.8rem"
-              fontWeight={400}
               color="#222"
+              fontSize="0.8rem"
             >
-              2023-01-05
+              조회수 59
+            </Typography>
+            <Typography
+              fontFamily={"Prosto One"}
+              color="#222"
+              fontSize="0.8rem"
+            >
+              좋아요 10
             </Typography>
           </Box>
-
-          <Typography fontFamily={"Prosto One"} fontWeight={500} color="#222">
+          <Typography
+            fontFamily={"Prosto One"}
+            fontWeight={500}
+            color="#222"
+            mt={3}
+          >
             MUI offers a comprehensive suite of UI tools to help you ship new
             features faster. Start with Material UI, our fully-loaded component
             library, or bring your own design system to our production-ready
@@ -100,9 +129,6 @@ export default function DetailNote() {
             of UI tools to help you ship new features faster. Start with
             Material UI, our fully-loaded component library, or bring your own
             design system to our production-ready components.
-          </Typography>
-          <Typography fontFamily={"Prosto One"} fontWeight={300} color="#222">
-            조회수 59
           </Typography>
         </Box>
       </Box>

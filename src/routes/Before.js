@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import UpdateIcon from '@mui/icons-material/Update';
-import CategoryIcon from '@mui/icons-material/Category';
-import NoteAltIcon from '@mui/icons-material/NoteAlt';
+import UpdateIcon from "@mui/icons-material/Update";
+import CategoryIcon from "@mui/icons-material/Category";
+import NoteAltIcon from "@mui/icons-material/NoteAlt";
 import img from "../images/vision.jpeg";
 import dash1 from "../images/dash1.png";
 import note1 from "../images/note1.png";
 import qna from "../images/qna.png";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { shadows } from "@mui/system";
 
 export default function Before() {
@@ -28,10 +28,9 @@ export default function Before() {
           borderBottomLeftRadius: 20,
           borderBottomRightRadius: 20,
           borderTopLeftRadius: 60,
-          borderTopRightRadius: 60
+          borderTopRightRadius: 60,
         }}
       >
-
         <Box
           style={{
             display: "flex",
@@ -43,7 +42,7 @@ export default function Before() {
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             borderTopLeftRadius: 60,
-            borderTopRightRadius: 60
+            borderTopRightRadius: 60,
           }}
         >
           <Typography
@@ -51,7 +50,7 @@ export default function Before() {
             fontFamily={"Prosto One"}
             fontWeight={900}
             fontSize="2rem"
-            color="white"
+            color="#FFFFFF"
           >
             ErrorGOnize
           </Typography>
@@ -60,7 +59,8 @@ export default function Before() {
             fontFamily={"Prosto One"}
             fontWeight={900}
             fontSize="2.5rem"
-            color="#C6C5C5">
+            color="yellow"
+          >
             Error, 복잡한 검색은 X
           </Typography>
           <Typography
@@ -68,15 +68,13 @@ export default function Before() {
             fontFamily={"Prosto One"}
             fontWeight={900}
             fontSize="2.7rem"
-            color="#F2F2F2">
+            color="#FFFFFF"
+          >
             쉽게 찾고 해결하기
-            <Box
-              ml={18}
-              mt={0.5}
-            >
+            <Box ml={18} mt={3.5}>
               <KeyboardArrowDownIcon
                 sx={{
-                  fontSize: 50
+                  fontSize: 50,
                 }}
               />
             </Box>
@@ -85,12 +83,7 @@ export default function Before() {
       </Box>
 
       {/* ----------------dash---------------------- */}
-      <Box
-        display={"flex"}
-        flexDirection="raw"
-        ml={8}
-        mt={6}
-      >
+      <Box display={"flex"} flexDirection="raw" ml={8} mt={6}>
         <Box
           display={"flex"}
           flexDirection="column"
@@ -99,25 +92,28 @@ export default function Before() {
             borderRadius: 5,
             width: "calc(45vw)",
             height: "calc(18vw)",
-            bgcolor: "#E9E9E9"
+            bgcolor: "#F1F1F1",
           }}
         >
-          <Typography
-            mt={1}
-            ml={4}
-            fontFamily={"Prosto One"}
-            fontWeight={900}
-            fontSize="1.4rem"
-            color="#818589"
-          >
-            <UpdateIcon fontSize="large" />업데이트되는 새로운 질문
-          </Typography>
+          <Box display="flex" alignItems="center" ml={4} mt={2}>
+            <UpdateIcon fontSize="large" style={{ color: "#818589" }} />
+            <Typography
+              mt={1}
+              ml={2}
+              fontFamily={"Prosto One"}
+              fontWeight={400}
+              fontSize="1.3rem"
+              color="#818589"
+            >
+              업데이트되는 새로운 질문
+            </Typography>
+          </Box>
           <Typography
             mt={4}
             ml={4}
             fontFamily={"Prosto One"}
             fontWeight={900}
-            fontSize="1.7rem"
+            fontSize="1.9rem"
           >
             몰랐던 Error는 확인
             <br />
@@ -139,19 +135,14 @@ export default function Before() {
               width: 250,
               height: 210,
               borderRadius: 30,
-              boxShadow: "10px 5px 5px gray"
+              boxShadow: "10px 5px 5px gray",
             }}
           />
         </Box>
       </Box>
 
       {/* -------------------QnA--------------------- */}
-      <Box
-        display={"flex"}
-        flexDirection="raw"
-        ml={8}
-        mt={-1}
-      >
+      <Box display={"flex"} flexDirection="raw" ml={8} mt={6}>
         <Box
           display={"flex"}
           flexDirection="column"
@@ -160,27 +151,30 @@ export default function Before() {
             borderRadius: 5,
             width: "calc(45vw)",
             height: "calc(13vw)",
-            bgcolor: "#E9E9E9"
+            bgcolor: "#F1F1F1",
           }}
         >
-          <Typography
-            mt={1}
-            ml={4}
-            fontFamily={"Prosto One"}
-            fontWeight={900}
-            fontSize="1.4rem"
-            color="#818589"
-          >
-           <CategoryIcon fontSize="large" /> 카테고리로 분류된 에러 
-          </Typography>
+          <Box display="flex" alignItems="center" ml={4} mt={2}>
+            <CategoryIcon fontSize="large" style={{ color: "#818589" }} />
+            <Typography
+              mt={1}
+              ml={2}
+              fontFamily={"Prosto One"}
+              fontWeight={400}
+              fontSize="1.3rem"
+              color="#818589"
+            >
+              카테고리로 분류된 에러
+            </Typography>
+          </Box>
           <Typography
             mt={4}
             ml={4}
             fontFamily={"Prosto One"}
             fontWeight={900}
-            fontSize="1.7rem"
+            fontSize="1.9rem"
           >
-             쉽고 빠른 에러 검색
+            쉽고 빠른 에러 검색
           </Typography>
         </Box>
 
@@ -198,19 +192,14 @@ export default function Before() {
               width: 250,
               height: 210,
               borderRadius: 30,
-              boxShadow: "10px 5px 5px gray"
+              boxShadow: "10px 5px 5px gray",
             }}
           />
         </Box>
       </Box>
 
       {/* -------------------note------------------------ */}
-      <Box
-        display={"flex"}
-        flexDirection="raw"
-        ml={16}
-        mt={-1}
-      >
+      <Box display={"flex"} flexDirection="raw" ml={16} mt={-1}>
         <Box
           display={"flex"}
           flexDirection="column"
@@ -219,25 +208,28 @@ export default function Before() {
             borderRadius: 5,
             width: "calc(45vw)",
             height: "calc(18vw)",
-            bgcolor: "#E9E9E9"
+            bgcolor: "#F1F1F1",
           }}
         >
-          <Typography
-            mt={1}
-            ml={4}
-            fontFamily={"Prosto One"}
-            fontWeight={900}
-            fontSize="1.4rem"
-            color="#818589"
-          >
-            <NoteAltIcon fontSize="large" /> 나만의 노트 작성
-          </Typography>
+          <Box display="flex" alignItems="center" ml={4} mt={2}>
+            <NoteAltIcon fontSize="large" style={{ color: "#818589" }} />
+            <Typography
+              mt={1}
+              ml={2}
+              fontFamily={"Prosto One"}
+              fontWeight={400}
+              fontSize="1.3rem"
+              color="#818589"
+            >
+              나만의 노트 작성
+            </Typography>
+          </Box>
           <Typography
             mt={4}
             ml={4}
             fontFamily={"Prosto One"}
             fontWeight={900}
-            fontSize="1.7rem"
+            fontSize="1.9rem"
           >
             해결된 에러를 기록하여
             <br />
@@ -258,7 +250,7 @@ export default function Before() {
               width: 300,
               height: 170,
               borderRadius: 20,
-              boxShadow: "10px 5px 5px gray"
+              boxShadow: "10px 5px 5px gray",
             }}
           />
         </Box>

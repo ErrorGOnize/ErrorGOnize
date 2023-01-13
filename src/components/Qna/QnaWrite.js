@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-export default function NoteWrite() {
+export default function QnaWrite() {
   return (
     <Box
       display={"flex"}
@@ -19,23 +19,25 @@ export default function NoteWrite() {
           fontSize="1.2rem"
           color="#FF6A00"
         >
-          🧐 노트는 어떻게? 🧐
+          🧐 Q&A는 어떻게? 🧐
         </Typography>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={400}>
-        개발하다가 발생한 에러를
+        개발하다가 모르거나
         <br />
-        정리한 노트를 올리시거나,
+        궁금한 것이 생겼을 때
+        <br />
+        질문을 올리시면 됩니다.
         <br />
         <br />
-        개발에 관련된 Tip을
+        질문에 대한 답을 아시면
         <br />
-        공유해주시면 됩니다.
+        답변을 달아주시면 됩니다.
         <br />
         <br />
         아래의 예시를 참고해서
         <br />
-        노트를 작성해보세요!
+        Q&A를 작성해보세요!
       </Typography>
     </Box>
   );

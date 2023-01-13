@@ -11,7 +11,6 @@ export default function Search() {
         p: "0px 4px",
         display: "flex",
         alignItems: "center",
-        width: "calc(15vw)",
         border: "1px solid lightgray",
         borderRadius: 6,
       }}

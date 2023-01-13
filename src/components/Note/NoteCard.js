@@ -9,7 +9,9 @@ export default function NoteCard() {
       flexDirection="column"
       p={3}
       gap={3}
-      sx={{ borderRadius: 5, width: "calc(38vw)" }}
+      sx={{
+        borderRadius: 5,
+      }}
       border={"5px solid #f3f3f3"}
     >
       <Box display="flex" justifyContent="space-between" alignItems="baseline">
@@ -21,14 +23,24 @@ export default function NoteCard() {
         >
           React - Typescript 정리
         </Typography>
-        <Typography
-          fontFamily={"Prosto One"}
-          fontSize="0.8rem"
-          fontWeight={400}
-          color="#222"
-        >
-          2023-01-05
-        </Typography>
+        <Box display="flex" gap={1}>
+          <Typography
+            fontFamily={"Prosto One"}
+            fontSize="0.8rem"
+            fontWeight={400}
+            color="#222"
+          >
+            김한동
+          </Typography>
+          <Typography
+            fontFamily={"Prosto One"}
+            fontSize="0.8rem"
+            fontWeight={400}
+            color="#222"
+          >
+            2023-01-05
+          </Typography>
+        </Box>
       </Box>
 
       <Typography fontFamily={"Prosto One"} fontWeight={500} color="#222">

@@ -7,7 +7,6 @@ export default function AddNoteBtn() {
         backgroundColor: "#0B0988",
         fontWeight: 900,
         fontSize: "1rem",
-        // width: "calc(18vw)",
       }}
       fullWidth
       variant="contained"

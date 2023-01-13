@@ -8,26 +8,25 @@ import { color } from "@mui/system";
 export default function RecentQtn() {
   return (
     <Box
-      
       sx={{
-        display: "flex", 
+        display: "flex",
         borderRadius: 5,
-      flexDirection: "column",
-      alignItems: "baseline",
-      p: 1,
-      gap: 1,
-      border: "5px solid #f3f3f3"
-       }}
-      
-     
+        flexDirection: "column",
+        alignItems: "baseline",
+        p: 1,
+        gap: 1,
+        border: "5px solid #f3f3f3"
+      }}
+
+
     >
-      <OthersPfBtn/>
+      <OthersPfBtn />
       <Box p={2}>
-      <Link to={"/qna/detailqna"} style={{ textDecoration: "none" }}>
-        <RecentQtnContent/>
-      </Link>
+        <Link to={"/qna/detailqna"} style={{ textDecoration: "none" }}>
+          <RecentQtnContent />
+        </Link>
       </Box>
-      
+
     </Box>
   );
 }

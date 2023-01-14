@@ -21,7 +21,7 @@ export default function QuestionBar() {
           sx={{
             margin: 0.8,
             ml: 4,
-            width: "calc(46.5vw)",
+            width: "calc(35vw)",
             height: "calc(6vh)",
             backgroundColor: "#f3f3f3",
             fontWeight: 900,

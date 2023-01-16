@@ -3,6 +3,7 @@ import Popularqna from "../components/Common/Popularqna";
 import RecentQtn from "../components/Dashboard/RecentQtn";
 import DashboardWrite from "../components/Dashboard/DashboardWrite";
 import QuestionBar from "../components/Dashboard/QuestionBar";
+import GoogleBtn from "../components/Login/GoogleBtn_Test";
 
 
 export default function Dashboard() {

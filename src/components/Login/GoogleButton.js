@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import GoogleLogin from "react-google-login";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from 'gapi-script';
 import { Box, Typography } from "@mui/material";
 
@@ -28,7 +28,6 @@ const GoogleButton = ({ onSocial }) => {
     return (
 
         <GoogleLogin
-
             clientId={clientId}
             // buttonText="구글계정으로 로그인하기"
             onSuccess={onSuccess}

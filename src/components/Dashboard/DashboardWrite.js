@@ -1,16 +1,15 @@
 import { Box, Typography } from "@mui/material";
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import QuizIcon from '@mui/icons-material/Quiz';
-
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import QuizIcon from "@mui/icons-material/Quiz";
 
 export default function DashboardWrite() {
-    return (
-      <Box
+  return (
+    <Box
       display={"flex"}
       flexDirection="column"
       p={3}
       gap={3}
-      sx={{ borderRadius: 5, width: "calc(18vw)"}}
+      sx={{ borderRadius: 5 }}
       border={"5px solid #f3f3f3"}
     >
       <Box display="flex" justifyContent="space-between">
@@ -24,12 +23,12 @@ export default function DashboardWrite() {
         </Typography>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={400}>
-        <AutorenewIcon/> 대시보드에서는 가장 최근에 
+        <AutorenewIcon /> 대시보드에서는 가장 최근에
         <br />
         게시된 에러들을 볼 수 있고,
         <br />
         <br />
-        <QuizIcon/> 상단의 질문 창을 통해
+        <QuizIcon /> 상단의 질문 창을 통해
         <br />
         질문을 게시할 수 있습니다.
         <br />
@@ -39,6 +38,5 @@ export default function DashboardWrite() {
         </Typography>
       </Typography>
     </Box>
-    );
-  }
-  
+  );
+}

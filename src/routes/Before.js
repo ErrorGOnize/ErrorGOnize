@@ -1,12 +1,13 @@
 import { Box, Typography, Container } from "@mui/material";
-import UpdateIcon from '@mui/icons-material/Update';
-import CategoryIcon from '@mui/icons-material/Category';
-import NoteAltIcon from '@mui/icons-material/NoteAlt';
+import UpdateIcon from "@mui/icons-material/Update";
+import CategoryIcon from "@mui/icons-material/Category";
+import NoteAltIcon from "@mui/icons-material/NoteAlt";
 import img from "../images/vision.jpeg";
 import dash1 from "../images/dash1.png";
 import note1 from "../images/note1.png";
 import qna from "../images/qna.png";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import GoogleButton from "../components/Login/GoogleButton";
 
 export default function Before() {
   return (
@@ -27,7 +28,7 @@ export default function Before() {
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             borderTopLeftRadius: 60,
-            borderTopRightRadius: 60
+            borderTopRightRadius: 60,
           }}
         >
           <Box
@@ -39,7 +40,7 @@ export default function Before() {
               borderBottomLeftRadius: 20,
               borderBottomRightRadius: 20,
               borderTopLeftRadius: 60,
-              borderTopRightRadius: 60
+              borderTopRightRadius: 60,
             }}
           >
             <Typography
@@ -55,20 +56,21 @@ export default function Before() {
               fontFamily={"Prosto One"}
               fontWeight={900}
               fontSize="2.5rem"
-              color="#C6C5C5">
+              color="#C6C5C5"
+            >
               Error, 복잡한 검색은 X
             </Typography>
             <Typography
               fontFamily={"Prosto One"}
               fontWeight={900}
               fontSize="2.7rem"
-              color="#F2F2F2">
+              color="#F2F2F2"
+            >
               쉽게 찾고 해결하기
             </Typography>
             <KeyboardArrowDownIcon sx={{ fontSize: 50, color: "#C6C5C5" }} />
           </Box>
         </Box>
-
 
         {/* ----------------dash---------------------- */}
         <Box
@@ -83,7 +85,7 @@ export default function Before() {
             position: "relative",
             top: "calc(1vw)",
             // left: "calc(0vh)",
-            zIndex: "modal"
+            zIndex: "modal",
           }}
         >
           <Typography
@@ -112,7 +114,7 @@ export default function Before() {
             top: "calc(-40vh)",
             left: "calc(15vw)",
             boxShadow: 10,
-            borderRadius: 5
+            borderRadius: 5,
           }}
         >
           <img
@@ -121,7 +123,7 @@ export default function Before() {
             alt="dash1"
             style={{
               width: "calc(25vw)",
-              borderRadius: 30
+              borderRadius: 30,
             }}
           />
         </Box>
@@ -138,7 +140,7 @@ export default function Before() {
             bgcolor: "#E9E9E9",
             position: "relative",
             top: "calc(-26vh)",
-            zIndex: "modal"
+            zIndex: "modal",
           }}
         >
           <Typography
@@ -168,9 +170,8 @@ export default function Before() {
             top: "calc(-70vh)",
             left: "calc(15vw)",
             boxShadow: 10,
-            borderRadius: 5
+            borderRadius: 5,
           }}
-
         >
           <img
             className="qna"
@@ -178,70 +179,70 @@ export default function Before() {
             alt="qna"
             style={{
               width: "calc(25vw)",
-              borderRadius: 30
+              borderRadius: 30,
             }}
           />
         </Box>
 
         {/* -------------------note------------------------ */}
-   
-          <Box
-             display={"flex"}
-             flexDirection="column"
-             alignItems="flex-start"
-             sx={{
-               borderRadius: 5,
-               width: "calc(45vw)",
-               height: "calc(13vw)",
-               bgcolor: "#E9E9E9",
-               position: "relative",
-               top: "calc(-65vh)",
-               zIndex: "modal"
-              }}
+
+        <Box
+          display={"flex"}
+          flexDirection="column"
+          alignItems="flex-start"
+          sx={{
+            borderRadius: 5,
+            width: "calc(45vw)",
+            height: "calc(13vw)",
+            bgcolor: "#E9E9E9",
+            position: "relative",
+            top: "calc(-65vh)",
+            zIndex: "modal",
+          }}
+        >
+          <Typography
+            mt={1}
+            ml={4}
+            fontFamily={"Prosto One"}
+            fontWeight={900}
+            fontSize="1.4rem"
+            color="#818589"
           >
-            <Typography
-              mt={1}
-              ml={4}
-              fontFamily={"Prosto One"}
-              fontWeight={900}
-              fontSize="1.4rem"
-              color="#818589"
-            >
-              <NoteAltIcon fontSize="large" /> 나만의 노트 작성
-            </Typography>
-            <Typography
-              mt={4}
-              ml={4}
-              fontFamily={"Prosto One"}
-              fontWeight={900}
-              fontSize="1.7rem"
-            >
-              해결된 에러를 기록하여
-              <br />
-              나만의 노트 만들기
-            </Typography>
-          </Box>
-          <Box
+            <NoteAltIcon fontSize="large" /> 나만의 노트 작성
+          </Typography>
+          <Typography
+            mt={4}
+            ml={4}
+            fontFamily={"Prosto One"}
+            fontWeight={900}
+            fontSize="1.7rem"
+          >
+            해결된 에러를 기록하여
+            <br />
+            나만의 노트 만들기
+          </Typography>
+        </Box>
+        <Box
           sx={{
             position: "relative",
             zIndex: "tooltip",
             top: "calc(-100vh)",
             left: "calc(15vw)",
             boxShadow: 10,
-            borderRadius: 5
+            borderRadius: 5,
           }}
-           
-          >
-            <img
-              className="note1"
-              src={note1}
-              alt="note1"
-              style={{
-                width: "calc(25vw)",
-                borderRadius: 30
-              }}
-            />
+        >
+          <img
+            className="note1"
+            src={note1}
+            alt="note1"
+            style={{
+              width: "calc(25vw)",
+              borderRadius: 30,
+            }}
+          />
         </Box>
+        <GoogleButton />
       </Box>
     </Container>
   );

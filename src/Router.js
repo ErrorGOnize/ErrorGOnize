@@ -40,11 +40,8 @@ export default function Router() {
         <Route path="/dashboard">
           <Dashboard />
         </Route>
-        <Route path="/before">
-          <Before />
-        </Route>
         <Route path="/">
-          <EgoLogin />
+          <Before />
         </Route>
       </Switch>
     </BrowserRouter>

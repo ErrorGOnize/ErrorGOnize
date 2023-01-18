@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const clientId =
   "555630715109-et9a11ivurav2a87vqi58vmupuc945os.apps.googleusercontent.com";
@@ -33,14 +34,16 @@ const GoogleButton = ({ onSocial }) => {
       onFailure={onFailure}
     >
       <Box width={"calc(40vw)"}>
-        <Typography
-          fontFamily={"Prosto One"}
-          fontWeight={900}
-          fontSize="1.1rem"
-          color="#808080"
-        >
-          구글계정으로 로그인하기
-        </Typography>
+        <Link to="/dashboard" style={{ textDecoration: "none" }}>
+          <Typography
+            fontFamily={"Prosto One"}
+            fontWeight={900}
+            fontSize="1.1rem"
+            color="#808080"
+          >
+            구글계정으로 로그인하기
+          </Typography>
+        </Link>
       </Box>
       {/* <Box>Sign in. Use your Google Account</Box> */}
     </GoogleLogin>

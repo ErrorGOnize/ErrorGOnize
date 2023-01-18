@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-export default function NoteCard() {
+export default function NoteCard({ note }) {
   return (
     <Box
       display={"flex"}
@@ -21,7 +21,7 @@ export default function NoteCard() {
           fontSize="1.2rem"
           color="#FF6A00"
         >
-          React - Typescript 정리
+          {note.noteTitle}
         </Typography>
         <Box display="flex" gap={1}>
           <Typography
@@ -30,7 +30,7 @@ export default function NoteCard() {
             fontWeight={400}
             color="#222"
           >
-            김한동
+            {note.writer}
           </Typography>
           <Typography
             fontFamily={"Prosto One"}
@@ -38,19 +38,16 @@ export default function NoteCard() {
             fontWeight={400}
             color="#222"
           >
-            2023-01-05
+            {note.regdate.split(["T"])[0]}
           </Typography>
         </Box>
       </Box>
 
       <Typography fontFamily={"Prosto One"} fontWeight={500} color="#222">
-        MUI offers a comprehensive suite of UI tools to help you ship new
-        features faster. Start with Material UI, our fully-loaded component
-        library, or bring your own design system to our production-ready
-        components.
+        {note.noteContent}
       </Typography>
       <Typography fontFamily={"Prosto One"} fontWeight={300} color="#222">
-        조회수 59
+        조회수 {note.viewCnt} 좋아요 {note.likedCnt}
       </Typography>
     </Box>
   );

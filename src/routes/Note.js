@@ -7,8 +7,21 @@ import NoteCard from "../components/Note/NoteCard";
 import Sort from "../components/Common/Sort";
 import NoteWrite from "../components/Note/NoteWrite";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function Note() {
+  const [notes, setNotes] = useState([]);
+
+  const getNotes = async () => {
+    const note = await axios.get("http://localhost:8080/note");
+    setNotes(note.data);
+  };
+
+  useEffect(() => {
+    getNotes();
+  }, []);
+
   return (
     <Container sx={{ pt: 3, mb: 3 }}>
       <Box display="flex" gap={6} alignItems="flex-start">
@@ -16,39 +29,34 @@ export default function Note() {
           display="flex"
           flexDirection="column"
           gap={3}
-          width="calc(15vw)"
+          // width="calc(15vw)"
           minWidth="calc(15vw)"
         >
           <Search />
           <Category />
         </Box>
-        <Box display="flex" flexDirection="column" gap={3}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap={3}
+          minWidth="calc(40vw)"
+        >
           <Sort />
-          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
-            <NoteCard />
-          </Link>
-          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
-            <NoteCard />
-          </Link>
-          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
-            <NoteCard />
-          </Link>
-          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
-            <NoteCard />
-          </Link>
-          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
-            <NoteCard />
-          </Link>
-          <Link to={"/note/detail"} style={{ textDecoration: "none" }}>
-            <NoteCard />
-          </Link>
+          {notes.map((note) => (
+            <Link
+              to={`/note/detail/${note.noteNo}`}
+              style={{ textDecoration: "none" }}
+            >
+              <NoteCard key={note.noteNo} note={note} />
+            </Link>
+          ))}
         </Box>
         <Box
           display="flex"
           flexDirection="column"
           gap={3}
-          width="calc(18vw)"
-          minWidth="calc(18vw)"
+          // width="calc(18vw)"
+          minWidth="calc(15vw)"
         >
           <Link to="/note/newnote" style={{ textDecoration: "none" }}>
             <AddNoteBtn />

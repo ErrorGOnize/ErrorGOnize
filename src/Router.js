@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
-import EgoLogin from "./routes/EgoLogin";
 import Dashboard from "./routes/Dashboard";
 import Mypage from "./routes/Mypage";
 import Note from "./routes/Note";
@@ -25,7 +24,7 @@ export default function Router() {
         <Route path="/qna">
           <Qna />
         </Route>
-        <Route path="/note/detail">
+        <Route path="/note/detail/:noteNo">
           <DetailNote />
         </Route>
         <Route path="/note/newnote">

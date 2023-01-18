@@ -3,30 +3,36 @@ import Category from "../components/Note/Category";
 import Popularqna from "../components/Common/Popularqna";
 import AddNoteBtn from "../components/Common/AddNoteBtn";
 import NoteWrite from "../components/Note/NoteWrite";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function DetailNote() {
+  const { noteNo } = useParams();
+
+  const [note, setNote] = useState([]);
+  const [date, setDate] = useState("");
+
+  const getNote = async () => {
+    const info = await axios.get(`http://localhost:8080/note/${noteNo}`);
+    setNote(info.data);
+    setDate(info.data.regdate.split("T")[0]);
+  };
+
+  useEffect(() => {
+    getNote();
+  }, []);
+
   return (
-    <Container
-      sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}
-      display="flex"
-      flexDirection="column"
-    >
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap={3}
-        maxWidth="calc(20vw)"
-        width="calc(15vw)"
-        minWidth="calc(15vw)"
-      >
+    <Container sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}>
+      <Box display="flex" flexDirection="column" gap={3} minWidth="calc(15vw)">
         <Link to="/note/newnote" style={{ textDecoration: "none" }}>
           <AddNoteBtn />
         </Link>
         <Category />
       </Box>
-      <Box display="flex" flexDirection="column" gap={3} maxWidth="calc(45vw)">
+      <Box display="flex" flexDirection="column" gap={3} minWidth="calc(40vw)">
         <Box
           display={"flex"}
           flexDirection="column"
@@ -57,7 +63,7 @@ export default function DetailNote() {
                 color="#FF6A00"
                 pt={0.5}
               >
-                React - Typescript 정리
+                {note.noteTitle}
               </Typography>
             </Box>
             <Box display="flex" gap={1}>
@@ -67,7 +73,7 @@ export default function DetailNote() {
                 fontWeight={400}
                 color="#222"
               >
-                김한동
+                {note.writer}
               </Typography>
               <Typography
                 fontFamily={"Prosto One"}
@@ -75,7 +81,7 @@ export default function DetailNote() {
                 fontWeight={400}
                 color="#222"
               >
-                2023-01-05
+                {date}
               </Typography>
             </Box>
           </Box>
@@ -85,14 +91,14 @@ export default function DetailNote() {
               color="#222"
               fontSize="0.8rem"
             >
-              조회수 59
+              조회수 {note.viewCnt}
             </Typography>
             <Typography
               fontFamily={"Prosto One"}
               color="#222"
               fontSize="0.8rem"
             >
-              좋아요 10
+              좋아요 {note.likedCnt}
             </Typography>
           </Box>
           <Typography
@@ -101,44 +107,11 @@ export default function DetailNote() {
             color="#222"
             mt={3}
           >
-            MUI offers a comprehensive suite of UI tools to help you ship new
-            features faster. Start with Material UI, our fully-loaded component
-            library, or bring your own design system to our production-ready
-            components. MUI offers a comprehensive suite of UI tools to help you
-            ship new features faster. Start with Material UI, our fully-loaded
-            component library, or bring your own design system to our
-            production-ready components. MUI offers a comprehensive suite of UI
-            tools to help you ship new features faster. Start with Material UI,
-            our fully-loaded component library, or bring your own design system
-            to our production-ready components. MUI offers a comprehensive suite
-            of UI tools to help you ship new features faster. Start with
-            Material UI, our fully-loaded component library, or bring your own
-            design system to our production-ready components.
-            <br />
-            <br />
-            MUI offers a comprehensive suite of UI tools to help you ship new
-            features faster. Start with Material UI, our fully-loaded component
-            library, or bring your own design system to our production-ready
-            components.MUI offers a comprehensive suite of UI tools to help you
-            ship new features faster. Start with Material UI, our fully-loaded
-            component library, or bring your own design system to our
-            production-ready components. MUI offers a comprehensive suite of UI
-            tools to help you ship new features faster. Start with Material UI,
-            our fully-loaded component library, or bring your own design system
-            to our production-ready components.MUI offers a comprehensive suite
-            of UI tools to help you ship new features faster. Start with
-            Material UI, our fully-loaded component library, or bring your own
-            design system to our production-ready components.
+            {note.noteContent}
           </Typography>
         </Box>
       </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap={3}
-        minWidth="calc(18vw)"
-        width="calc(40vw)"
-      >
+      <Box display="flex" flexDirection="column" gap={3} minWidth="calc(15vw)">
         <Popularqna />
         <NoteWrite />
       </Box>

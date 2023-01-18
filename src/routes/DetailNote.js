@@ -18,6 +18,11 @@ export default function DetailNote() {
     const info = await axios.get(`http://localhost:8080/note/${noteNo}`);
     setNote(info.data);
     setDate(info.data.regdate.split("T")[0]);
+    console.log(info.data);
+  };
+
+  const deleteNote = async (noteNo) => {
+    await axios.delete(`http://localhost:8080/note/${noteNo}`);
   };
 
   useEffect(() => {
@@ -109,6 +114,23 @@ export default function DetailNote() {
           >
             {note.noteContent}
           </Typography>
+          {note.visible ? (
+            <>
+              <Button
+                sx={{ mt: 3 }}
+                color="warning"
+                onClick={() => {
+                  deleteNote(note.noteNo);
+                  window.history.back();
+                  // window.reload();
+                }}
+              >
+                삭제
+              </Button>
+            </>
+          ) : (
+            <></>
+          )}
         </Box>
       </Box>
       <Box display="flex" flexDirection="column" gap={3} minWidth="calc(15vw)">

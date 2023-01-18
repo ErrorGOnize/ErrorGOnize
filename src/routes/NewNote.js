@@ -6,10 +6,28 @@ import {
   TextField,
   Link,
 } from "@mui/material";
+import axios from "axios";
+import { useState } from "react";
 import CateDropdown from "../components/Common/CateDropdown";
 import Toggle from "../components/NewNote/Toggle";
 
 export default function NewNote() {
+  const [writer, setWriter] = useState("");
+  const [category, setCategory] = useState("");
+  const [visible, setVisible] = useState(true);
+  const [noteTitle, setNoteTitle] = useState("");
+  const [noteContent, setNoteContent] = useState("");
+
+  const addNote = async () => {
+    await axios.post(`http://localhost:8080/note`, {
+      writer: `${writer}`,
+      category: `${category}`,
+      visible: `${visible}`,
+      noteTitle: `${noteTitle}`,
+      noteContent: `${noteContent}`,
+    });
+  };
+
   return (
     <Container
       maxWidth="md"
@@ -36,6 +54,7 @@ export default function NewNote() {
             color="warning"
             disableElevation
             onClick={() => {
+              addNote();
               window.history.back();
             }}
           >

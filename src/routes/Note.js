@@ -20,7 +20,7 @@ export default function Note() {
 
   useEffect(() => {
     getNotes();
-  }, []);
+  }, [notes]);
 
   return (
     <Container sx={{ pt: 3, mb: 3 }}>

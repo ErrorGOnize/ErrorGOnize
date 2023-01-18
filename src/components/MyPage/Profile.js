@@ -9,7 +9,7 @@ export default function Profile({ personalInfo }){
         setEdit(!edit);
         console.log(edit)
     }
-    console.log(personalInfo)
+    
     return (
         <Box >
             <Box display="flex" flexDirection="row" sx={{ pl: 10, pr: 10 }}>

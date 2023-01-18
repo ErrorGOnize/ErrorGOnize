@@ -6,11 +6,23 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "../components/MyPage/TabPanel";
 import Profile from "../components/MyPage/Profile";
+import axios from "axios";
+
 
 export default function Mypage() {
   const [ tab, setTab ] = useState("NOTE");
   const [ toLink, setToLink ] = useState("/note/newnote");
-  
+  const [ user, setUser ] = useState([]);
+
+  const getUser = async () => {
+    const user = await axios.get("http://localhost:8080/user")
+    console.log(user);
+    setUser(user.data);
+  }
+  useEffect(() => {
+    getUser(); 
+  }, []);
+
   const tabChange = (newValue) => {
     setTab(newValue.target.innerText);
     if (newValue.target.innerText == 'NOTE')

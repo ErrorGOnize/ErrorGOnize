@@ -50,7 +50,7 @@ function Header() {
                 </Button>
               </Link>
             ))}
-            <NotificationsIcon sx={{ color: "#A6A0B5", ml: 1, mr: 1 }} />
+            {/* <NotificationsIcon sx={{ color: "#A6A0B5", ml: 1, mr: 1 }} /> */}
           </Box>
         </Toolbar>
       </AppBar>

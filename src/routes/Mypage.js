@@ -8,37 +8,35 @@ import TabPanel from "../components/MyPage/TabPanel";
 import Profile from "../components/MyPage/Profile";
 import axios from "axios";
 
-
 export default function Mypage() {
-  const [ tab, setTab ] = useState("NOTE");
-  const [ toLink, setToLink ] = useState("/note/newnote");
-  const [ user, setUser ] = useState([]);
+  const [tab, setTab] = useState("NOTE");
+  const [toLink, setToLink] = useState("/note/newnote");
+  const [user, setUser] = useState([]);
 
   const getUser = async () => {
-    const user = await axios.get("http://localhost:8080/user")
+    const user = await axios.get("http://localhost:8080/user/2");
     console.log(user);
     setUser(user.data);
-  }
+  };
   useEffect(() => {
-    getUser(); 
+    getUser();
   }, []);
 
   const tabChange = (newValue) => {
     setTab(newValue.target.innerText);
-    if (newValue.target.innerText == 'NOTE')
-      setToLink("/note/newnote");
-    if (newValue.target.innerText == 'Q & A')
-      setToLink("/qna/newqna");
+    if (newValue.target.innerText == "NOTE") setToLink("/note/newnote");
+    if (newValue.target.innerText == "Q & A") setToLink("/qna/newqna");
   };
 
   var personalInfo = {
-    "name": "홍길동",
-    "intro": "대구와 경북 동부 10개 시군에 내려졌던 초미세먼지 주의보는 오후 들어 모두 해제됐습니다.주의보는 해제됐지만 내일도 대구의 초미세먼지 농도는 매우 나쁨, 경북은 나쁨에 오후 들어 일시적으로 매우 나쁨 수준이 예상돼, 야외활동 시 주의가 필요합니다.",
-    "web" : "www.handong.edu",
-    "tagP" : ['웹개발자', '바르게살자'],
-    "tagI" : ['Python', 'java', 'SQL', 'C++', 'C', 'Javascript'],
-    "img" : "src"
-  }
+    name: "홍길동",
+    intro:
+      "대구와 경북 동부 10개 시군에 내려졌던 초미세먼지 주의보는 오후 들어 모두 해제됐습니다.주의보는 해제됐지만 내일도 대구의 초미세먼지 농도는 매우 나쁨, 경북은 나쁨에 오후 들어 일시적으로 매우 나쁨 수준이 예상돼, 야외활동 시 주의가 필요합니다.",
+    web: "www.handong.edu",
+    tagP: ["웹개발자", "바르게살자"],
+    tagI: ["Python", "java", "SQL", "C++", "C", "Javascript"],
+    img: "src",
+  };
   return (
     <Container sx={{ pt: 7, width: "calc(75vw)" }}>
       <Profile personalInfo={personalInfo}></Profile>

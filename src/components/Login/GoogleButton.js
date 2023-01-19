@@ -27,10 +27,6 @@ const GoogleButton = ({ onSocial }) => {
     console.log(response);
   };
 
-  const onLogoutSuccess = (response) => {
-    console.log(response);
-  };
-
   return (
     <>
       <GoogleLogin

@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { Container, Box, Button, Stack } from "@mui/material";
+import { Container, Box, Button, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-
+import { GoogleLogout } from "react-google-login";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "../components/MyPage/TabPanel";
 import Profile from "../components/MyPage/Profile";
 import axios from "axios";
+
+const clientId =
+  "555630715109-et9a11ivurav2a87vqi58vmupuc945os.apps.googleusercontent.com";
 
 export default function Mypage() {
   const [tab, setTab] = useState("NOTE");
@@ -18,14 +21,19 @@ export default function Mypage() {
     console.log(user);
     setUser(user.data);
   };
+
   useEffect(() => {
     getUser();
   }, []);
 
+  const onLogoutSuccess = () => {
+    window.location.href = "/before";
+  };
+
   const tabChange = (newValue) => {
     setTab(newValue.target.innerText);
-    if (newValue.target.innerText == "NOTE") setToLink("/note/newnote");
-    if (newValue.target.innerText == "Q & A") setToLink("/qna/newqna");
+    if (newValue.target.innerText === "NOTE") setToLink("/note/newnote");
+    if (newValue.target.innerText === "Q & A") setToLink("/qna/newqna");
   };
 
   var personalInfo = {
@@ -55,6 +63,20 @@ export default function Mypage() {
         sx={{ pt: 3, mb: 3, pl: 10, pr: 10 }}
       >
         <TabPanel mode={tab} toLink={toLink}></TabPanel>
+      </Box>
+      <Box sx={{ pt: 3, pl: 10, mb: 6 }}>
+        <GoogleLogout clientId={clientId} onLogoutSuccess={onLogoutSuccess}>
+          {/* <Box width={"calc(40vw)"}> */}
+          <Typography
+            fontFamily={"Prosto One"}
+            fontWeight={900}
+            fontSize="1.1rem"
+            color="#808080"
+          >
+            로그아웃
+          </Typography>
+          {/* </Box> */}
+        </GoogleLogout>
       </Box>
     </Container>
   );

@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
-export default function QuestionCard({question, date, content, numOfAnswer, tag}) {
+export default function QuestionCard({ question }) {
   return (
     <Box
       display={"flex"}
@@ -22,7 +22,7 @@ export default function QuestionCard({question, date, content, numOfAnswer, tag}
             fontSize="1.2rem"
             color="#FF6A00"
           >
-            {question}
+            {question.questionTitle}
           </Typography>
         </Link>
         <Typography
@@ -30,11 +30,11 @@ export default function QuestionCard({question, date, content, numOfAnswer, tag}
           fontSize="0.8rem"
           fontWeight={400}
         >
-          {date}
+          {/* {question.regdate.split(["T"])[0]} */}
         </Typography>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={500}>
-        {content}
+        {question.questionContent}
       </Typography>
       <Box
             display="flex"
@@ -44,12 +44,11 @@ export default function QuestionCard({question, date, content, numOfAnswer, tag}
         <Button 
           style={{ color: "#424242" ,backgroundColor: "#f5f5f5"}}
         >
-        {tag}
+        {question.category}
         </Button>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={300}>
-        답변
-        {numOfAnswer}
+        답변 {question.answered}  조회수 {question.viewCnt} 궁금해요 {question.curious}
       </Typography>
     </Box>
   );

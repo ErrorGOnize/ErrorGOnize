@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 
 const clientId =
   "555630715109-et9a11ivurav2a87vqi58vmupuc945os.apps.googleusercontent.com";
@@ -21,20 +20,26 @@ const GoogleButton = ({ onSocial }) => {
 
   const onSuccess = (response) => {
     console.log(response);
+    window.location.href = "/dashboard";
   };
 
   const onFailure = (response) => {
     console.log(response);
   };
+
+  const onLogoutSuccess = (response) => {
+    console.log(response);
+  };
+
   return (
-    <GoogleLogin
-      clientId={clientId}
-      // buttonText="구글계정으로 로그인하기"
-      onSuccess={onSuccess}
-      onFailure={onFailure}
-    >
-      <Box width={"calc(40vw)"}>
-        <Link to="/dashboard" style={{ textDecoration: "none" }}>
+    <>
+      <GoogleLogin
+        clientId={clientId}
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        isSignedIn={true}
+      >
+        <Box width={"calc(40vw)"}>
           <Typography
             fontFamily={"Prosto One"}
             fontWeight={900}
@@ -43,10 +48,13 @@ const GoogleButton = ({ onSocial }) => {
           >
             구글계정으로 로그인하기
           </Typography>
-        </Link>
-      </Box>
-      {/* <Box>Sign in. Use your Google Account</Box> */}
-    </GoogleLogin>
+        </Box>
+      </GoogleLogin>
+      {/* <GoogleLogout
+        clientId={clientId}
+        onLogoutSuccess={onLogoutSuccess}
+      ></GoogleLogout> */}
+    </>
   );
 };
 

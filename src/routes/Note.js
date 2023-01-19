@@ -29,18 +29,13 @@ export default function Note() {
           display="flex"
           flexDirection="column"
           gap={3}
-          // width="calc(15vw)"
-          minWidth="calc(15vw)"
+          width="calc(15vw)"
+          // minWidth="calc(15vw)"
         >
           <Search />
           <Category />
         </Box>
-        <Box
-          display="flex"
-          flexDirection="column"
-          gap={3}
-          minWidth="calc(40vw)"
-        >
+        <Box display="flex" flexDirection="column" gap={3} width="calc(40vw)">
           <Sort />
           {notes.map((note) => (
             <Link
@@ -55,8 +50,8 @@ export default function Note() {
           display="flex"
           flexDirection="column"
           gap={3}
-          // width="calc(18vw)"
-          minWidth="calc(15vw)"
+          width="calc(18vw)"
+          // minWidth="calc(15vw)"
         >
           <Link to="/note/newnote" style={{ textDecoration: "none" }}>
             <AddNoteBtn />

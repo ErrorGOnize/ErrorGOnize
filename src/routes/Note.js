@@ -36,7 +36,7 @@ export default function Note() {
           <Category />
         </Box>
         <Box display="flex" flexDirection="column" gap={3} width="calc(40vw)">
-          <Sort />
+          {/* <Sort /> */}
           {notes.map((note) => (
             <Link
               to={`/note/detail/${note.noteNo}`}

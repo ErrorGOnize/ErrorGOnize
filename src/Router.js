@@ -10,11 +10,13 @@ import NewNote from "./routes/NewNote";
 import DetailNote from "./routes/DetailNote";
 import DetailQna from "./routes/DetailQna";
 import EditNote from "./routes/EditNote";
+import { Box } from "@mui/material";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Header />
+      <Box height={"calc(8vh)"}></Box>
       <Switch>
         <Route path="/qna/detailqna">
           <DetailQna />

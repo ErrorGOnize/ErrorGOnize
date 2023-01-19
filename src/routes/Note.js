@@ -32,7 +32,7 @@ export default function Note() {
           width="calc(15vw)"
           // minWidth="calc(15vw)"
           position="sticky"
-          top="calc(3vh)"
+          top="calc(11vh)"
         >
           <Search />
           <Category />
@@ -56,7 +56,7 @@ export default function Note() {
           // minWidth="calc(15vw)"
           position="sticky"
           left="calc(72vw)"
-          top="calc(3vh)"
+          top="calc(11vh)"
         >
           <Link to="/note/newnote" style={{ textDecoration: "none" }}>
             <AddNoteBtn />

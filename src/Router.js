@@ -18,7 +18,7 @@ export default function Router() {
       <Header />
       <Box height={"calc(8vh)"}></Box>
       <Switch>
-        <Route path="/qna/detailqna">
+        <Route path="/qna/detailqna/:question_no">
           <DetailQna />
         </Route>
         <Route path="/qna/newqna">

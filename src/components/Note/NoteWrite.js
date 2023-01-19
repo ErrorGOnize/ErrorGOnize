@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function NoteWrite() {
   return (
@@ -37,6 +38,24 @@ export default function NoteWrite() {
         <br />
         노트를 작성해보세요!
       </Typography>
+      <Box display="flex" alignItems="center" gap={1}>
+        <Typography sx={{ fontSize: "1.4rem" }}>📓</Typography>
+        <a
+          target="_blank"
+          href="https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-CORS-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-%F0%9F%91%8F"
+        >
+          <Typography>예시 1</Typography>
+        </a>
+      </Box>
+      <Box display="flex" alignItems="center" gap={1}>
+        <Typography sx={{ fontSize: "1.4rem" }}>📓</Typography>
+        <a
+          target="_blank"
+          href="https://www.npmjs.com/package/react-google-login"
+        >
+          <Typography>예시 2</Typography>
+        </a>
+      </Box>
     </Box>
   );
 }

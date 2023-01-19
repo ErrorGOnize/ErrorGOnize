@@ -14,17 +14,25 @@ const clientId =
 export default function Mypage() {
   const [tab, setTab] = useState("NOTE");
   const [toLink, setToLink] = useState("/note/newnote");
-  const [user, setUser] = useState([]);
-
-  const getUser = async () => {
-    const user = await axios.get("http://localhost:8080/user/2");
-    console.log(user);
-    setUser(user.data);
-  };
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
+    async function getUser(){
+      const user = await axios.get("http://localhost:8080/user/2");
+      console.log(user.data);
+      setInfo(user.data);
+    };
     getUser();
   }, []);
+
+  // async function getUser(){
+  //   const user = await axios.get("http://localhost:8080/user/2");
+  //   console.log(user.data);
+  //   setInfo(user.data);
+  // }
+  // useEffect(() => {
+  //   getUser();
+  // },[]);
 
   const onLogoutSuccess = () => {
     window.location.href = "/before";
@@ -41,13 +49,13 @@ export default function Mypage() {
     intro:
       "대구와 경북 동부 10개 시군에 내려졌던 초미세먼지 주의보는 오후 들어 모두 해제됐습니다.주의보는 해제됐지만 내일도 대구의 초미세먼지 농도는 매우 나쁨, 경북은 나쁨에 오후 들어 일시적으로 매우 나쁨 수준이 예상돼, 야외활동 시 주의가 필요합니다.",
     web: "www.handong.edu",
-    tagP: ["웹개발자", "바르게살자"],
-    tagI: ["Python", "java", "SQL", "C++", "C", "Javascript"],
+    tagP: "웹개발자, 바르게살자",
+    tagI: "Python,java, SQL, C++, C, Javascript",
     img: "src",
   };
   return (
     <Container sx={{ pt: 7, width: "calc(75vw)" }}>
-      <Profile personalInfo={personalInfo}></Profile>
+      <Profile></Profile>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs value={tab} onChange={tabChange} centered>

@@ -1,15 +1,45 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Box, Grid, Stack, Button, TextField } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Chips from "./Chips";
+import axios from "axios";
 
-export default function Profile({ personalInfo }){
+
+export default function Profile(){
     const [ edit, setEdit ] = useState(false);
     const editChange = () => {
         setEdit(!edit);
         console.log(edit)
     }
-    
+
+    const [values, setValues] = useState({
+        name: name,
+        intro: intro,
+        tagP: tagP,
+        tagI: tagI
+    });
+
+    const [name, setName] = useState("");
+    const [intro, setIntro] = useState("");
+    const [tagP, setTagP] = useState("");
+    const [tagI, setTagI] = useState("");
+
+    useEffect(() => {
+    async function getUser(){
+        const user = await axios.get("http://localhost:8080/user/2");
+        console.log(user.data);
+        setName(user.data.name);
+        setIntro(user.data.intro);
+        setTagP(user.data.tagP);
+        setTagI(user.data.tagI);
+    };
+    getUser();
+    }, []);
+
+    const handleChange = (event) => {
+        setValues({ ...values, [event.target.id]:event.target.value });
+    }
+
     return (
         <Box >
             <Box display="flex" flexDirection="row" sx={{ pl: 10, pr: 10 }}>
@@ -32,11 +62,12 @@ export default function Profile({ personalInfo }){
                             (<TextField
                                 sx={{ m: 1 }}
                                 label="name"
-                                id="edit-name"
-                                defaultValue={personalInfo.name}
+                                id="name"
+                                defaultValue={name}
                                 size="normal"
+                                onChange={handleChange}
                               />):
-                            (<h3>{personalInfo.name}</h3>)
+                            (<h3>{name}</h3>)
                         }
                     </Grid>
                     <Grid item xs={3}>
@@ -52,23 +83,14 @@ export default function Profile({ personalInfo }){
                             (<TextField
                                 sx={{ m: 1, width: '100%' }}
                                 label="소개"
-                                id="edit-intro"
-                                defaultValue={personalInfo.intro}
+                                id="intro"
+                                defaultValue={intro}
                                 size="normal"
                                 multiline
                                 rows={4}
+                                onChange={handleChange}
                               />):
-                            (<p>{ personalInfo.intro }</p>)
-                    }
-                    { edit ? 
-                            (<TextField
-                                sx={{ m: 1, width: '100%' }}
-                                label="website"
-                                id="edit-web"
-                                defaultValue={personalInfo.web}
-                                size="normal"
-                              />):
-                            (<p>🌐 website: { personalInfo.web }</p>)
+                            (<p>{ intro }</p>)
                     }
                     </Grid>
                 </Grid>
@@ -77,10 +99,10 @@ export default function Profile({ personalInfo }){
             <Box display="flex" flexDirection="row" sx={{ pl: 10, pr: 10 }}>
             <Grid container spacing={5}>
             <Grid item xs={6} alignItems="center">
-                <Chips mode="Profile" data={personalInfo.tagP} edit={edit}/>
+                <Chips mode="Profile" tags={tagP} edit={edit}/>
             </Grid>
             <Grid item xs={6}>
-                <Chips mode="Interests" data={personalInfo.tagI} edit={edit}/>
+                <Chips mode="Interests" tags={tagI} edit={edit}/>
             </Grid>
             </Grid>
         </Box>
@@ -176,3 +198,16 @@ if (!edit)
           </Box>
     );
 */
+
+/** website
+ * { edit ? 
+                            (<TextField
+                                sx={{ m: 1, width: '100%' }}
+                                label="website"
+                                id="edit-web"
+                                defaultValue={personalInfo.intro}
+                                size="normal"
+                              />):
+                            (<p>🌐 website: { personalInfo.intro }</p>)
+                    }
+ */

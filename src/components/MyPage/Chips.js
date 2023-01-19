@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import { Chip } from '@mui/material';
 import Box from '@mui/material/Box';
 
-export default function Chips({ mode, data, edit }){
+export default function Chips({ mode, tags, edit }){
     const [ status, setStatus ] = useState(mode);
     /*
     const [chipData, setChipData] = React.useState([
@@ -18,16 +18,32 @@ export default function Chips({ mode, data, edit }){
     ]);
     */
 
+    //   const loadChipData = () => {
+    //       var cnt = 0;
+    //       var start = true;
+    //       const chipObject = data.map((chip) => {
+    //           if(!start)  cnt = cnt + 1;
+    //           start = false;
+    //           return { key: cnt, label: chip }
+    //       })
+    //       return chipObject;
+    //   }
+
     const loadChipData = () => {
         var cnt = 0;
         var start = true;
-        const chipObject = data.map((chip) => {
-            if(!start)  cnt = cnt + 1;
+        var chipList = tags.split(',')
+        const chipObject = chipList.map((chip) => {
+            if(!start) cnt = cnt + 1;
             start = false;
             return { key: cnt, label: chip }
         })
         return chipObject;
     }
+    // const loadChipData = () => {
+    //     console.log(tags)
+    //     return tags
+    // }
 
     const [ chipData, setChipData ] = useState(loadChipData())
 

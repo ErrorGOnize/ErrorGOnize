@@ -43,7 +43,8 @@ export default function Router() {
           <Mypage />
         </Route>
         <Route path="/dashboard">
-          <Dashboard />
+          {/* <Dashboard /> */}
+          <Qna />
         </Route>
         <Route path="/">
           <Before />

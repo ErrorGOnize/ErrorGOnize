@@ -43,7 +43,13 @@ export default function NoteCard({ note }) {
         </Box>
       </Box>
 
-      <Typography fontFamily={"Prosto One"} fontWeight={500} color="#222">
+      <Typography
+        fontFamily={"Prosto One"}
+        fontWeight={500}
+        color="#222"
+        overflow={"hidden"}
+        textOverflow="clip"
+      >
         {note.noteContent}
       </Typography>
       <Typography fontFamily={"Prosto One"} fontWeight={300} color="#222">

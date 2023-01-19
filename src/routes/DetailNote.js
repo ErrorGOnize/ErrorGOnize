@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function DetailNote() {
   const { noteNo } = useParams();
@@ -112,7 +113,7 @@ export default function DetailNote() {
             color="#222"
             mt={3}
           >
-            {note.noteContent}
+            <ReactMarkdown children={note.noteContent} />
           </Typography>
           {note.visible ? (
             <>

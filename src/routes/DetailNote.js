@@ -116,7 +116,15 @@ export default function DetailNote() {
             <ReactMarkdown children={note.noteContent} />
           </Typography>
           {note.visible ? (
-            <>
+            <Box display={"flex"} justifyContent="space-around">
+              <Link
+                to={`/note/edit/${note.noteNo}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Button sx={{ mt: 3 }} color="info">
+                  수정
+                </Button>
+              </Link>
               <Button
                 sx={{ mt: 3 }}
                 color="warning"
@@ -128,7 +136,7 @@ export default function DetailNote() {
               >
                 삭제
               </Button>
-            </>
+            </Box>
           ) : (
             <></>
           )}

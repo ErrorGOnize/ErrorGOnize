@@ -4,8 +4,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 
-export default function CateDropdown({ getCate }) {
-  const [category, setCategory] = useState("");
+export default function CateDropdown({ getCate, cate }) {
+  const [category, setCategory] = useState(cate);
 
   const handleChange = (e) => {
     setCategory(e.target.value);

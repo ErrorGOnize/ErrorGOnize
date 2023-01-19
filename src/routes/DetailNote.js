@@ -91,7 +91,22 @@ export default function DetailNote() {
               </Typography>
             </Box>
           </Box>
-          <Box display="flex" gap={1} justifyContent="flex-end" mt={1}>
+          <Box
+            display="flex"
+            gap={1}
+            justifyContent="flex-end"
+            mt={1}
+            alignItems="base-line"
+          >
+            <Button
+              style={{
+                color: "#fff",
+                backgroundColor: "#FFA500",
+                height: 20,
+              }}
+            >
+              # {note.category}
+            </Button>
             <Typography
               fontFamily={"Prosto One"}
               color="#222"

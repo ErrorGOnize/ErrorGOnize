@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { Button } from "@mui/material";
 
 export default function NoteCard({ note }) {
   return (
@@ -52,9 +53,19 @@ export default function NoteCard({ note }) {
       >
         {note.noteContent}
       </Typography>
-      <Typography fontFamily={"Prosto One"} fontWeight={300} color="#222">
-        조회수 {note.viewCnt} 좋아요 {note.likedCnt}
-      </Typography>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        gap={2}
+      >
+        <Button style={{ color: "#fff", backgroundColor: "#FFA500" }}>
+          # {note.category}
+        </Button>
+        <Typography fontFamily={"Prosto One"} fontWeight={300} color="#222">
+          조회수 {note.viewCnt} 좋아요 {note.likedCnt}
+        </Typography>
+      </Box>
     </Box>
   );
 }

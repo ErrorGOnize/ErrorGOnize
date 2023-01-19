@@ -10,9 +10,7 @@ import Popularqna from "../../components/Common/Popularqna";
 import AddQnaBtn from "../../components/Qna/AddQnaBtn";
 import QnaWrite from "../../components/Qna/QnaWrite";
 
-
 export default function QuestionDetail() {
-
   const { questionNo } = useParams();
   const [question, setQuestion] = useState([]);
   const [date, setDate] = useState("");
@@ -95,18 +93,10 @@ export default function QuestionDetail() {
           >
             {date}
           </Typography>
-          <Typography
-            fontFamily={"Prosto One"}
-            color="#222"
-            fontSize="0.8rem"
-          >
+          <Typography fontFamily={"Prosto One"} color="#222" fontSize="0.8rem">
             조회수 {question.viewCnt}
           </Typography>
-          <Typography
-            fontFamily={"Prosto One"}
-            color="#222"
-            fontSize="0.8rem"
-          >
+          <Typography fontFamily={"Prosto One"} color="#222" fontSize="0.8rem">
             궁금해요 {question.curious}
           </Typography>
         </Box>

@@ -1,8 +1,9 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Button from '@mui/material/Button';
-import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export default function QuestionCard({ question }) {
   return (
@@ -15,7 +16,7 @@ export default function QuestionCard({ question }) {
       border={"5px solid #f3f3f3"}
     >
       <Box display="flex" justifyContent="space-between" alignItems="baseline">
-        <Link to="/qna/detailqna" style={{ textDecoration: 'none' }}>
+        <Link to="/qna/detailqna" style={{ textDecoration: "none" }}>
           <Typography
             fontFamily={"Prosto One"}
             fontWeight={900}
@@ -36,19 +37,14 @@ export default function QuestionCard({ question }) {
       <Typography fontFamily={"Prosto One"} fontWeight={500}>
         {question.questionContent}
       </Typography>
-      <Box
-            display="flex"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-      >
-        <Button 
-          style={{ color: "#424242" ,backgroundColor: "#f5f5f5"}}
-        >
-        {question.category}
+      <Box display="flex" justifyContent="flex-start" alignItems="flex-start">
+        <Button style={{ color: "#424242", backgroundColor: "#f5f5f5" }}>
+          {question.category}
         </Button>
       </Box>
       <Typography fontFamily={"Prosto One"} fontWeight={300}>
-        답변 {question.answered}  조회수 {question.viewCnt} 궁금해요 {question.curious}
+        답변 {question.answered} 조회수 {question.viewCnt} 궁금해요{" "}
+        {question.curious}
       </Typography>
     </Box>
   );

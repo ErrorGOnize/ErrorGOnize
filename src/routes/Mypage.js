@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Container, Box, Button, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-
+import { GoogleLogout } from "react-google-login";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import TabPanel from "../components/MyPage/TabPanel";
 import Profile from "../components/MyPage/Profile";
 import axios from "axios";
-import { GoogleLogout } from "react-google-login";
 
 const clientId =
   "555630715109-et9a11ivurav2a87vqi58vmupuc945os.apps.googleusercontent.com";
@@ -41,8 +40,8 @@ export default function Mypage() {
 
   const tabChange = (newValue) => {
     setTab(newValue.target.innerText);
-    if (newValue.target.innerText == "NOTE") setToLink("/note/newnote");
-    if (newValue.target.innerText == "Q & A") setToLink("/qna/newqna");
+    if (newValue.target.innerText === "NOTE") setToLink("/note/newnote");
+    if (newValue.target.innerText === "Q & A") setToLink("/qna/newqna");
   };
 
   var personalInfo = {
@@ -65,6 +64,7 @@ export default function Mypage() {
           </Tabs>
         </Box>
       </Box>
+
       <Box
         display="flex"
         flexDirection="column"
@@ -74,6 +74,7 @@ export default function Mypage() {
       </Box>
       <Box sx={{ pt: 3, pl: 10, mb: 6 }}>
         <GoogleLogout clientId={clientId} onLogoutSuccess={onLogoutSuccess}>
+          {/* <Box width={"calc(40vw)"}> */}
           <Typography
             fontFamily={"Prosto One"}
             fontWeight={900}
@@ -82,8 +83,44 @@ export default function Mypage() {
           >
             로그아웃
           </Typography>
+          {/* </Box> */}
         </GoogleLogout>
       </Box>
     </Container>
   );
 }
+
+/*
+<Container sx={{ pt: 7, width: "calc(75vw)" }}>
+      <Box display="flex" flexDirection="row" sx={{ pl: 10, pr: 10 }}>
+        <Profile personalInfo={personalInfo}></Profile>
+      </Box>
+      <Box display="flex" flexDirection="row" sx={{ pl: 10, pr: 10 }}>
+        <Grid container spacing={5}>
+          <Grid item xs={6} alignItems="center">
+            <Chips mode="Profile" data={personalInfo.tagP} edit={edit}/>
+          </Grid>
+          <Grid item xs={6}>
+            <Chips mode="Interests" data={personalInfo.tagI} />
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs value={tab} onChange={tabChange} centered>
+            <Tab label="NOTE" value="NOTE" />
+            <Tab label="Q & A" value="Q & A" />
+          </Tabs>
+        </Box>
+      </Box>
+
+      <Box
+        display="flex"
+        flexDirection="column"
+        sx={{ pt: 3, mb: 3, pl: 10, pr: 10 }}
+      >
+        <TabPanel mode={tab} toLink={toLink}></TabPanel>
+      </Box>
+    </Container>
+ */

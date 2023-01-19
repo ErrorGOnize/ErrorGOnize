@@ -1,12 +1,16 @@
+import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import { Grid, Button } from '@mui/material';
 import PfBtn from '../Dashboard/PfBtn';
 import Cards from "./Cards";
+import NoteCard from "../Note/NoteCard";
+
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 const QuestionBar = (mode) => {
-  console.log(mode.value);
   return (
     <Box
       sx={{
@@ -42,15 +46,58 @@ const QuestionBar = (mode) => {
 }
 
 export default function TabPanel({ mode, toLink }) {  
+  const [isNote, setIsNote] = useState( () => {
+    console.log("mode:", mode);
+    if(mode == 'NOTE')
+      return true
+    else  
+      return false
+  });
+  const [notes, setNotes] = useState([]);
+  const [qnas, setQnas] = useState([]);
+
+  const getNotes = async () => {
+    const note = await axios.get("http://localhost:8080/note");
+    setNotes(note.data);
+    console.log(note.data)
+  };
+  const getQna = async () => {
+    const qna = await axios.get("http://localhost:8080/qna");
+    setNotes(qna.data);
+    console.log(qna.data)
+  };
+
+  useEffect(() => {
+    getNotes();
+    //getQna();
+  }, []);
+
     return (
       <div>
         <Box >
-          <Link to={ toLink }  style={{ textDecoration: "none" }}>
-            <QuestionBar value={mode}/>
-          </Link>
-          <Grid container spacing={10}> 
-            <Grid item xs={6} alignItems="center">
-              <Cards mode={mode}></Cards>
+          <Grid container spacing={20} alignSelf="center"> 
+            <Grid item alignItems="center">
+              <Link to={ toLink }  style={{ textDecoration: "none" }}>
+                <QuestionBar value={mode}/>
+              </Link>
+              { (isNote)?
+                  notes.map((note) => (
+                    <Link
+                      to={`/note/detail/${note.noteNo}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <NoteCard key={note.noteNo} note={note} alignItems="center" />
+                    </Link>
+                  ))
+                :qnas.map((qna) => (
+                  <Link
+                    to={`/qna/detail/${qna.noteNo}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <NoteCard key={qna.qnaNo} qna={qna} alignItems="center" />
+                  </Link>
+                ))
+              }
             </Grid>
           </Grid>
         </Box>

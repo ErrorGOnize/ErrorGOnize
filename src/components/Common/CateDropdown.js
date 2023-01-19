@@ -4,11 +4,12 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 
-export default function CateDropdown() {
-  const [category, setCategory] = useState("");
+export default function CateDropdown({ getCate, cate }) {
+  const [category, setCategory] = useState(cate);
 
-  const handleChange = (event) => {
-    setCategory(event.target.value);
+  const handleChange = (e) => {
+    setCategory(e.target.value);
+    getCate(e.target.value);
   };
 
   return (
@@ -27,16 +28,16 @@ export default function CateDropdown() {
         <MenuItem value="" fontFamily="Prosto One">
           <em>카테고리</em>
         </MenuItem>
-        <MenuItem value={1}>#java</MenuItem>
-        <MenuItem value={2}>#spring</MenuItem>
-        <MenuItem value={3}>#flutter</MenuItem>
-        <MenuItem value={4}>#python</MenuItem>
-        <MenuItem value={5}>#javascript</MenuItem>
-        <MenuItem value={6}>#android</MenuItem>
-        <MenuItem value={7}>#ios</MenuItem>
-        <MenuItem value={8}>#c++</MenuItem>
-        <MenuItem value={9}>#linux</MenuItem>
-        <MenuItem value={10}>#intellij</MenuItem>
+        <MenuItem value={"java"}>#java</MenuItem>
+        <MenuItem value={"spring"}>#spring</MenuItem>
+        <MenuItem value={"flutter"}>#flutter</MenuItem>
+        <MenuItem value={"python"}>#python</MenuItem>
+        <MenuItem value={"javascript"}>#javascript</MenuItem>
+        <MenuItem value={"android"}>#android</MenuItem>
+        <MenuItem value={"ios"}>#ios</MenuItem>
+        <MenuItem value={"c++"}>#c++</MenuItem>
+        <MenuItem value={"linux"}>#linux</MenuItem>
+        <MenuItem value={"intelliJ"}>#intellij</MenuItem>
       </Select>
     </FormControl>
   );

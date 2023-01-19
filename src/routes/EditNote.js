@@ -7,20 +7,35 @@ import {
   Link,
 } from "@mui/material";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import CateDropdown from "../components/Common/CateDropdown";
 import Toggle from "../components/NewNote/Toggle";
 
-export default function NewNote() {
+export default function EditNote() {
+  const { noteNo } = useParams();
   const [writer, setWriter] = useState("EGOnize");
   const [category, setCategory] = useState("");
   const [visible, setVisible] = useState(true);
   const [noteTitle, setNoteTitle] = useState("");
   const [noteContent, setNoteContent] = useState("");
 
-  const addNote = async () => {
-    await axios.post(`http://localhost:8080/note`, {
-      writer: `${writer}`,
+  const getNote = async () => {
+    const note = await axios.get(`http://localhost:8080/note/${noteNo}`);
+    setWriter(note.data.writer);
+    setCategory(note.data.category);
+    setVisible(note.data.visible);
+    setNoteTitle(note.data.noteTitle);
+    setNoteContent(note.data.noteContent);
+  };
+
+  useEffect(() => {
+    getNote();
+  }, []);
+
+  const editNote = async () => {
+    await axios.patch(`http://localhost:8080/note`, {
+      noteNo: `${noteNo}`,
       category: `${category}`,
       visible: `${visible}`,
       noteTitle: `${noteTitle}`,
@@ -54,8 +69,8 @@ export default function NewNote() {
     >
       <Box display="flex" justifyContent="space-between" sx={{ p: 3 }}>
         <Box display="flex" alignItems="center" gap={3}>
-          <CateDropdown getCate={getCate} />
-          <Toggle getVisi={getVisi} />
+          <CateDropdown getCate={getCate} cate={category} />
+          <Toggle getVisi={getVisi} visible={visible} />
         </Box>
         <Box display="flex" gap={2}>
           <Button
@@ -73,11 +88,11 @@ export default function NewNote() {
             color="warning"
             disableElevation
             onClick={() => {
-              addNote();
+              editNote();
               window.history.back();
             }}
           >
-            완료
+            수정 완료
           </Button>
         </Box>
       </Box>
@@ -98,6 +113,7 @@ export default function NewNote() {
           multiline
           rows={19}
           size="small"
+          value={noteContent}
           onChange={handleContent}
         />
       </Box>

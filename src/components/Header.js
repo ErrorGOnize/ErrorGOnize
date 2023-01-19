@@ -17,7 +17,12 @@ const pages = [
 function Header() {
   return (
     <Container>
-      <AppBar position="static" style={{ background: "#fff" }} elevation={0}>
+      <AppBar
+        position="fixed"
+        top="-32px"
+        style={{ background: "#fff" }}
+        elevation={0}
+      >
         <Toolbar>
           <Typography
             variant="h5"

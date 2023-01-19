@@ -53,10 +53,14 @@ const IOSSwitch = styled((props) => (
   },
 }));
 
-export default function Toggle() {
+export default function Toggle({ getVisi, visible }) {
+  const handleToggle = (e) => {
+    getVisi(e.target.checked);
+  };
+
   return (
     <Tooltip title="공개, 비공개 설정">
-      <IOSSwitch defaultChecked />
+      <IOSSwitch onChange={handleToggle} defaultChecked />
     </Tooltip>
   );
 }

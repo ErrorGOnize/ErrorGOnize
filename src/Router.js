@@ -9,11 +9,14 @@ import Before from "./routes/Before";
 import NewNote from "./routes/NewNote";
 import DetailNote from "./routes/DetailNote";
 import DetailQna from "./routes/DetailQna";
+import EditNote from "./routes/EditNote";
+import { Box } from "@mui/material";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Header />
+      <Box height={"calc(8vh)"}></Box>
       <Switch>
         <Route path="/qna/detailqna">
           <DetailQna />
@@ -30,6 +33,9 @@ export default function Router() {
         <Route path="/note/newnote">
           <NewNote />
         </Route>
+        <Route path="/note/edit/:noteNo">
+          <EditNote />
+        </Route>
         <Route path="/note">
           <Note />
         </Route>
@@ -37,7 +43,8 @@ export default function Router() {
           <Mypage />
         </Route>
         <Route path="/dashboard">
-          <Dashboard />
+          {/* <Dashboard /> */}
+          <Qna />
         </Route>
         <Route path="/">
           <Before />

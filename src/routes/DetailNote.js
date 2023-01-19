@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function DetailNote() {
   const { noteNo } = useParams();
@@ -90,7 +91,22 @@ export default function DetailNote() {
               </Typography>
             </Box>
           </Box>
-          <Box display="flex" gap={1} justifyContent="flex-end" mt={1}>
+          <Box
+            display="flex"
+            gap={1}
+            justifyContent="flex-end"
+            mt={1}
+            alignItems="base-line"
+          >
+            <Button
+              style={{
+                color: "#fff",
+                backgroundColor: "#FFA500",
+                height: 20,
+              }}
+            >
+              # {note.category}
+            </Button>
             <Typography
               fontFamily={"Prosto One"}
               color="#222"
@@ -112,10 +128,18 @@ export default function DetailNote() {
             color="#222"
             mt={3}
           >
-            {note.noteContent}
+            <ReactMarkdown children={note.noteContent} />
           </Typography>
           {note.visible ? (
-            <>
+            <Box display={"flex"} justifyContent="space-around">
+              <Link
+                to={`/note/edit/${note.noteNo}`}
+                style={{ textDecoration: "none" }}
+              >
+                <Button sx={{ mt: 3 }} color="info">
+                  수정
+                </Button>
+              </Link>
               <Button
                 sx={{ mt: 3 }}
                 color="warning"
@@ -127,7 +151,7 @@ export default function DetailNote() {
               >
                 삭제
               </Button>
-            </>
+            </Box>
           ) : (
             <></>
           )}

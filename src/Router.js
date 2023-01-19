@@ -9,6 +9,7 @@ import Before from "./routes/Before";
 import NewNote from "./routes/NewNote";
 import DetailNote from "./routes/DetailNote";
 import DetailQna from "./routes/DetailQna";
+import EditNote from "./routes/EditNote";
 
 export default function Router() {
   return (
@@ -29,6 +30,9 @@ export default function Router() {
         </Route>
         <Route path="/note/newnote">
           <NewNote />
+        </Route>
+        <Route path="/note/edit/:noteNo">
+          <EditNote />
         </Route>
         <Route path="/note">
           <Note />

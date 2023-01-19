@@ -53,7 +53,7 @@ const IOSSwitch = styled((props) => (
   },
 }));
 
-export default function Toggle({ getVisi }) {
+export default function Toggle({ getVisi, visible }) {
   const handleToggle = (e) => {
     getVisi(e.target.checked);
   };

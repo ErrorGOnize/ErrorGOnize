@@ -47,7 +47,7 @@ export default function NoteWrite() {
           <Typography>예시 1</Typography>
         </a>
       </Box>
-      <Box display="flex" alignItems="center" gap={1}>
+      {/* <Box display="flex" alignItems="center" gap={1}>
         <Typography sx={{ fontSize: "1.4rem" }}>📓</Typography>
         <a
           target="_blank"
@@ -55,7 +55,7 @@ export default function NoteWrite() {
         >
           <Typography>예시 2</Typography>
         </a>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

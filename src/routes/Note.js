@@ -31,6 +31,8 @@ export default function Note() {
           gap={3}
           width="calc(15vw)"
           // minWidth="calc(15vw)"
+          position="sticky"
+          top="calc(3vh)"
         >
           <Search />
           <Category />
@@ -52,6 +54,9 @@ export default function Note() {
           gap={3}
           width="calc(18vw)"
           // minWidth="calc(15vw)"
+          position="sticky"
+          left="calc(72vw)"
+          top="calc(3vh)"
         >
           <Link to="/note/newnote" style={{ textDecoration: "none" }}>
             <AddNoteBtn />

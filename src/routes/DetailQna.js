@@ -1,12 +1,38 @@
-import { Box, Container } from "@mui/material";
 import Category from "../components/Note/Category";
 import AnswerBox from "../components/Qna/AnswerBox";
 import Answer from "../components/Qna/Answer";
-import QuestionDetail from "../components/Qna/QuestionDetail";
 import Popularqna from "../components/Common/Popularqna";
 import QnaWrite from "../components/Qna/QnaWrite";
+import * as React from "react";
+import { Box, Button, Container, Typography } from "@mui/material";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function DetailQna() {
+
+  const { questionNo } = useParams();
+  const [question, setQuestion] = useState([]);
+  const [date, setDate] = useState("");
+
+  const getQuestion = async () => {
+    // const info = await axios.get('http://localhost:8080/qna/${questionNo}');
+    const info = await axios.get('http://localhost:8080/qna/${questionNo}');
+    setQuestion(info.data);
+    setDate(info.data.regdate.split("T")[0]);
+    console.log(info.data);
+  };
+
+  const deleteQuestion = async (questionNo) => {
+    await axios.delete(`http://localhost:8080/qna/${questionNo}`);
+  };
+
+  useEffect(() => {
+    getQuestion();
+  }, []);
+
   return (
     <Container
       sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}
@@ -25,28 +51,109 @@ export default function DetailQna() {
       </Box>
 
       <Box display="flex" flexDirection="column" gap={3} maxWidth="calc(45vw)">
-        <QuestionDetail
-          question="Q. javascript에서 변수명을 object 키로 사용하는 방법?"
-          date="2021-05-21"
-          content="const subject1 = 'math';
-          const subject2= 'english';
-          const info = { subject1: 50, subject2: 55 } 
-          
-          위의 코드를 보면 subject1, subject2를 정의하고 나서 info를 정의했는데 결과는  아래와 같이 나옵니다.
-          console.log(info) // { subject1: 50, subject2: 55 } 
-          
-          제가 원하는 형태는 { math: 50, english: 55 } 이렇게 되면 좋겠습니다. subject1과 subject2를 키로 바로 정의할수는 없나요?"
-          tag="#javascript"
-        />
-        <AnswerBox/>
-        <Answer
-          date = "2021-05-18"
-          name = "홍길동"
-          content = "변수명을 object의 키로 사용하기 위한 방법으로 두 가지 방법이 생각납니다. 1. 객체안의 키를 변수로 사용하려면 대괄호[] 안에 사용하셔야합니다. 2. 각각의 키와 값을 추가해주는 것입니다."
-          rec = "4"
-        />
+        
+      <Box
+        display={"flex"}
+        flexDirection="column"
+        p={3}
+        sx={{
+          borderRadius: 5,
+          // width: "calc(38vw)"
+        }}
+        border={"5px solid #f3f3f3"}
+      >
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="baseline"
+        >
+          <Box display="flex" gap={2} alignItems="center">
+            <Button
+              onClick={() => {
+                window.history.back();
+              }}
+            >
+              <NavigateBeforeIcon sx={{ color: "#888" }} />
+            </Button>
+            <Typography
+              fontFamily={"Prosto One"}
+              fontWeight={900}
+              fontSize="1.2rem"
+              color="#FF6A00"
+              pt={0.5}
+            >
+              {question.questionTitle}
+            </Typography>
+          </Box>
+          <Box display="flex" gap={1}>
+            <Typography
+              fontFamily={"Prosto One"}
+              fontSize="0.8rem"
+              fontWeight={400}
+              color="#222"
+            >
+              {question.writer}
+            </Typography>
+            <Typography
+              fontFamily={"Prosto One"}
+              fontSize="0.8rem"
+              fontWeight={400}
+              color="#222"
+            >
+              {date}
+            </Typography>
+          </Box>
+        </Box>
+        <Box display="flex" gap={1} justifyContent="flex-end" mt={1}>
+          <Typography
+            fontFamily={"Prosto One"}
+            fontSize="0.8rem"
+            fontWeight={400}
+            color="#222"
+          >
+            {date}
+          </Typography>
+          <Typography fontFamily={"Prosto One"} color="#222" fontSize="0.8rem">
+            조회수 {question.viewCnt}
+          </Typography>
+          <Typography fontFamily={"Prosto One"} color="#222" fontSize="0.8rem">
+            궁금해요 {question.curious}
+          </Typography>
+        </Box>
+        <Typography
+          fontFamily={"Prosto One"}
+          fontWeight={500}
+          color="#222"
+          mt={3}
+        >
+          <ReactMarkdown children={question.questionContent} />
+        </Typography>
+        <Box display={"flex"} justifyContent="space-around">
+          <Link
+            to={`qna/edit/${question.questionNo}`}
+            style={{ textDecoration: "none" }}
+          >
+            <Button sx={{ mt: 3 }} color="info">
+              수정
+            </Button>
+          </Link>
+          <Button
+            sx={{ mt: 3 }}
+            color="warning"
+            onClick={() => {
+              deleteQuestion(question.questionNo);
+              window.history.back();
+              // window.reload();
+            }}
+          >
+            삭제
+          </Button>
+        </Box>
       </Box>
 
+        <AnswerBox/>
+        <Answer/>
+      </Box>
       <Box
         display="flex"
         flexDirection="column"

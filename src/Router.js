@@ -10,6 +10,7 @@ import NewNote from "./routes/NewNote";
 import DetailNote from "./routes/DetailNote";
 import DetailQna from "./routes/DetailQna";
 import EditNote from "./routes/EditNote";
+import EditQuestion from "./routes/EditQna";
 import { Box } from "@mui/material";
 
 export default function Router() {
@@ -20,6 +21,9 @@ export default function Router() {
       <Switch>
         <Route path="/qna/detailqna/:questionNo">
           <DetailQna />
+        </Route>
+        <Route path="/qna/edit/:questionNo">
+          <EditQuestion />
         </Route>
         <Route path="/qna/newqna">
           <NewQna />

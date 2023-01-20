@@ -6,7 +6,7 @@ import QuestionDetail from "../components/Qna/QuestionDetail";
 import Popularqna from "../components/Common/Popularqna";
 import QnaWrite from "../components/Qna/QnaWrite";
 
-export default function Qna() {
+export default function DetailQna() {
   return (
     <Container
       sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}

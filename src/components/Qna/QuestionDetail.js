@@ -110,7 +110,7 @@ export default function QuestionDetail() {
         </Typography>
         <Box display={"flex"} justifyContent="space-around">
           <Link
-            to={`/question/edit/${question.questionNo}`}
+            to={`qna/edit/${question.questionNo}`}
             style={{ textDecoration: "none" }}
           >
             <Button sx={{ mt: 3 }} color="info">

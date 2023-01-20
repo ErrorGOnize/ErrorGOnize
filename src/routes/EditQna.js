@@ -19,7 +19,7 @@ import {
     const [questionContent, setContent] = useState("");
   
     const getQuestion = async () => {
-      const question = await axios.get(`http://localhost:8080/qna/${questionNo}`);
+      const question = await axios.get(`http://localhost:8080/qna/${questionNO}`);
       setWriter(question.data.writer);
       setCategory(question.data.category);
       setTitle(question.data.questionTitle);
@@ -31,7 +31,8 @@ import {
     }, []);
   
     const editQuestion = async () => {
-      await axios.patch(`http://localhost:8080/qna/newqna`, {
+      await axios.patch(`http://localhost:8080/qn
+      a/newqna`, {
         questionNo: `${questionNO}`,
         category: `${category}`,
         questionTitle: `${questionTitle}`,

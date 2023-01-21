@@ -1,15 +1,14 @@
+import { Box, Button, Container, Typography} from "@mui/material"
 import Category from "../components/Note/Category";
-import AnswerBox from "../components/Qna/AnswerBox";
-import Answer from "../components/Qna/Answer";
 import Popularqna from "../components/Common/Popularqna";
 import QnaWrite from "../components/Qna/QnaWrite";
-import * as React from "react";
-import { Box, Button, Container, Typography } from "@mui/material";
+import Answer from "../components/Qna/Answer";
+import AnswerBox from "../components/Qna/AnswerBox";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Link, useParams } from "react-router-dom";
 
 export default function DetailQna() {
 
@@ -18,7 +17,6 @@ export default function DetailQna() {
   const [date, setDate] = useState("");
 
   const getQuestion = async () => {
-    // const info = await axios.get('http://localhost:8080/qna/${questionNo}');
     const info = await axios.get('http://localhost:8080/qna/${questionNo}');
     setQuestion(info.data);
     setDate(info.data.regdate.split("T")[0]);
@@ -34,24 +32,11 @@ export default function DetailQna() {
   }, []);
 
   return (
-    <Container
-      sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}
-      display="flex"
-      flexDirection="column"
-    >
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap={3}
-        maxWidth="calc(20vw)"
-        width="calc(15vw)"
-        minWidth="calc(15vw)"
-      >
-        <Category />
-      </Box>
-
-      <Box display="flex" flexDirection="column" gap={3} maxWidth="calc(45vw)">
-        
+    <Container sx={{ pt: 3, mb: 3, display: "flex", gap: 6 }}>
+    <Box display="flex" flexDirection="column" gap={3} minWidth="calc(15vw)">
+      <Category />
+    </Box>
+    <Box display="flex" flexDirection="column" gap={3} minWidth="calc(40vw)">
       <Box
         display={"flex"}
         flexDirection="column"
@@ -104,19 +89,34 @@ export default function DetailQna() {
             </Typography>
           </Box>
         </Box>
-        <Box display="flex" gap={1} justifyContent="flex-end" mt={1}>
+        <Box
+          display="flex"
+          gap={1}
+          justifyContent="flex-end"
+          mt={1}
+          alignItems="base-line"
+        >
+          <Button
+            style={{
+              color: "#fff",
+              backgroundColor: "#FFA500",
+              height: 20,
+            }}
+          >
+            # {question.category}
+          </Button>
           <Typography
             fontFamily={"Prosto One"}
-            fontSize="0.8rem"
-            fontWeight={400}
             color="#222"
+            fontSize="0.8rem"
           >
-            {date}
-          </Typography>
-          <Typography fontFamily={"Prosto One"} color="#222" fontSize="0.8rem">
             조회수 {question.viewCnt}
           </Typography>
-          <Typography fontFamily={"Prosto One"} color="#222" fontSize="0.8rem">
+          <Typography
+            fontFamily={"Prosto One"}
+            color="#222"
+            fontSize="0.8rem"
+          >
             궁금해요 {question.curious}
           </Typography>
         </Box>
@@ -128,42 +128,35 @@ export default function DetailQna() {
         >
           <ReactMarkdown children={question.questionContent} />
         </Typography>
-        <Box display={"flex"} justifyContent="space-around">
-          <Link
-            to={`qna/edit/${question.questionNo}`}
-            style={{ textDecoration: "none" }}
-          >
-            <Button sx={{ mt: 3 }} color="info">
-              수정
+          <Box display={"flex"} justifyContent="space-around">
+            <Link
+              to={`/qna/edit/${question.questionNo}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Button sx={{ mt: 3 }} color="info">
+                수정
+              </Button>
+            </Link>
+            <Button
+              sx={{ mt: 3 }}
+              color="warning"
+              onClick={() => {
+                deleteQuestion(question.questionNo);
+                window.history.back();
+                // window.reload();
+              }}
+            >
+              삭제
             </Button>
-          </Link>
-          <Button
-            sx={{ mt: 3 }}
-            color="warning"
-            onClick={() => {
-              deleteQuestion(question.questionNo);
-              window.history.back();
-              // window.reload();
-            }}
-          >
-            삭제
-          </Button>
-        </Box>
+          </Box>
+          <AnswerBox/>
+          <Answer/>
       </Box>
-
-        <AnswerBox/>
-        <Answer/>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap={3}
-        minWidth="calc(18vw)"
-        width="calc(40vw)"
-      >
-        <Popularqna />
-        <QnaWrite />
-      </Box>
-    </Container>
+    </Box>
+    <Box display="flex" flexDirection="column" gap={3} minWidth="calc(15vw)">
+      <Popularqna />
+      <QnaWrite />
+    </Box>
+  </Container>
   );
 }
